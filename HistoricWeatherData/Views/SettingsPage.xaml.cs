@@ -1,4 +1,4 @@
-using HistoricWeatherData.ViewModels;
+using HistoricWeatherData.Core.ViewModels;
 
 namespace HistoricWeatherData.Views
 {

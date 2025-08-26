@@ -45,6 +45,12 @@
                     <Label Text="Location Name" FontSize="14" />
                     <Entry Text="{Binding LocationName}"
                            Placeholder="New York, NY" />
+                    <Button Text="Get Current Location"
+                            Command="{Binding GetCurrentLocationCommand}"
+                            IsEnabled="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
+                            BackgroundColor="#007ACC"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand" />
                 </VerticalStackLayout>
             </Frame>
 

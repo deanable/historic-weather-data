@@ -1,16 +1,12 @@
-﻿using HistoricWeatherData.Services.Interfaces;
-using HistoricWeatherData.ViewModels;
+using HistoricWeatherData.Core.ViewModels;
 
-namespace HistoricWeatherData;
+namespace HistoricWeatherData.Views;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage(IWeatherDataService weatherService, IReverseGeocodingService geocodingService, ISettingsService settingsService)
+	public MainPage(MainViewModel viewModel)
 	{
 		InitializeComponent();
-
-		// Set up ViewModel with dependency injection
-		BindingContext = new MainViewModel(weatherService, geocodingService, settingsService);
+		BindingContext = viewModel;
 	}
 }
-
