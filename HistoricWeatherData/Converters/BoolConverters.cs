@@ -81,9 +81,13 @@ namespace HistoricWeatherData.Converters
             return false;
         }
 
-        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+        public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            return parameter;
+            if (value is bool boolValue && boolValue && parameter is string stringValue)
+            {
+                return stringValue;
+            }
+            return null;
         }
     }
 

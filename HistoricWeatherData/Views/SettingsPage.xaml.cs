@@ -1,12 +1,13 @@
-using HistoricWeatherData.Services.Interfaces;
+using HistoricWeatherData.ViewModels;
 
 namespace HistoricWeatherData.Views
 {
     public partial class SettingsPage : ContentPage
     {
-        public SettingsPage(ISettingsService settingsService)
+        public SettingsPage(SettingsViewModel viewModel)
         {
-            // The ViewModel is set in XAML with dependency injection
+            InitializeComponent();
+            BindingContext = viewModel;
         }
     }
 }

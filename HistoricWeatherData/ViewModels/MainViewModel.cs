@@ -1,5 +1,7 @@
 using HistoricWeatherData.Models;
 using HistoricWeatherData.Services.Interfaces;
+using Microsoft.Maui.Devices.Sensors;
+using Microsoft.Maui.ApplicationModel;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -40,6 +42,7 @@ namespace HistoricWeatherData.ViewModels
             LoadWeatherDataCommand = new Command(async () => await LoadWeatherDataAsync());
             ClearDataCommand = new Command(ClearData);
             NavigateToSettingsCommand = new Command(NavigateToSettings);
+            GetCurrentLocationCommand = new Command(async () => await GetCurrentLocationAsync());
         }
 
         public ObservableCollection<WeatherData> WeatherData { get; }
@@ -167,6 +170,7 @@ namespace HistoricWeatherData.ViewModels
         public ICommand LoadWeatherDataCommand { get; }
         public ICommand ClearDataCommand { get; }
         public ICommand NavigateToSettingsCommand { get; }
+        public ICommand GetCurrentLocationCommand { get; }
 
         private void UpdateDateRange()
         {
@@ -212,6 +216,52 @@ namespace HistoricWeatherData.ViewModels
             if (SelectedTimeRange != "Custom Range")
             {
                 EndDate = null;
+            }
+        }
+
+        private async Task GetCurrentLocationAsync()
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = "Getting current location...";
+
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location == null)
+                {
+                    location = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10)));
+                }
+
+                if (location != null)
+                {
+                    Latitude = location.Latitude;
+                    Longitude = location.Longitude;
+
+                    var placemarks = await Geocoding.GetPlacemarksAsync(location.Latitude, location.Longitude);
+                    var placemark = placemarks?.FirstOrDefault();
+                    if (placemark != null)
+                    {
+                        LocationName = $"{placemark.Locality}, {placemark.AdminArea}";
+                    }
+                    else
+                    {
+                        LocationName = "Unknown";
+                    }
+
+                    StatusMessage = "Current location found";
+                }
+                else
+                {
+                    StatusMessage = "Unable to get current location";
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
             }
         }
 
@@ -269,10 +319,14 @@ namespace HistoricWeatherData.ViewModels
             StatusMessage = "Data cleared";
         }
 
-        private void NavigateToSettings()
+        private async void NavigateToSettings()
         {
-            // Navigate to settings page
-            Application.Current?.MainPage?.Navigation.PushAsync(new Views.SettingsPage(_settingsService));
+            var settingsViewModel = await SettingsViewModel.Create(_settingsService);
+            var settingsPage = new Views.SettingsPage(settingsViewModel);
+            if (Application.Current?.MainPage != null)
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(settingsPage);
+            }
         }
 
         protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)

@@ -41,7 +41,8 @@ namespace HistoricWeatherData.Services.Implementations
                         parameters.Location.Longitude,
                         parameters.StartDate,
                         endDate,
-                        year);
+                        year,
+                        locationData);
 
                     allWeatherData.AddRange(yearlyData);
                 }
@@ -63,7 +64,7 @@ namespace HistoricWeatherData.Services.Implementations
         }
 
         private async Task<List<WeatherData>> GetWeatherDataForYearAsync(
-            double latitude, double longitude, DateTime startDate, DateTime endDate, int year)
+            double latitude, double longitude, DateTime startDate, DateTime endDate, int year, LocationData locationData)
         {
             // Adjust dates for the specific year
             var yearStartDate = new DateTime(year, startDate.Month, startDate.Day);
@@ -86,7 +87,7 @@ namespace HistoricWeatherData.Services.Implementations
 
             var result = await response.Content.ReadFromJsonAsync<OpenMeteoResponse>();
 
-            if (result?.daily == null)
+            if (result?.daily?.time == null || result.daily.temperature_2m_min == null || result.daily.temperature_2m_max == null || result.daily.precipitation_sum == null)
             {
                 return new List<WeatherData>();
             }
@@ -101,14 +102,7 @@ namespace HistoricWeatherData.Services.Implementations
                     TemperatureMax = result.daily.temperature_2m_max[i],
                     Precipitation = result.daily.precipitation_sum[i],
                     WeatherProvider = ProviderName,
-                    Location = new LocationData
-                    {
-                        Latitude = latitude,
-                        Longitude = longitude,
-                        CityName = "Location",
-                        Country = "Unknown",
-                        State = "Unknown"
-                    }
+                    Location = locationData
                 });
             }
 

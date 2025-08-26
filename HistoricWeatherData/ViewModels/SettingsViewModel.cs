@@ -17,7 +17,14 @@ namespace HistoricWeatherData.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public SettingsViewModel(ISettingsService settingsService)
+        public static async Task<SettingsViewModel> Create(ISettingsService settingsService)
+        {
+            var viewModel = new SettingsViewModel(settingsService);
+            await viewModel.LoadSettingsAsync();
+            return viewModel;
+        }
+
+        private SettingsViewModel(ISettingsService settingsService)
         {
             _settingsService = settingsService;
 
@@ -25,8 +32,6 @@ namespace HistoricWeatherData.ViewModels
             SaveApiKeysCommand = new Command(async () => await SaveApiKeysAsync());
             ClearAllCommand = new Command(async () => await ClearAllAsync());
             GoBackCommand = new Command(GoBack);
-
-            LoadSettingsAsync();
         }
 
         public string SyncfusionLicenseKey
