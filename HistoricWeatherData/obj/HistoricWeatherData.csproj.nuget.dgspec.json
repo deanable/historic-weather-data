@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj": {}
+    "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+    "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj",
         "projectName": "HistoricWeatherData.Core",
-        "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj",
+        "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj",
         "packagesPath": "C:\\Users\\Dean Kruger\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\obj\\",
+        "outputPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -48,8 +48,8 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -70,14 +70,14 @@
         }
       }
     },
-    "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj": {
+    "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
+        "projectUniqueName": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
         "projectName": "HistoricWeatherData",
-        "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
+        "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
         "packagesPath": "C:\\Users\\Dean Kruger\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\obj\\",
+        "outputPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -103,32 +103,32 @@
           "net8.0-android34.0": {
             "targetAlias": "net8.0-android",
             "projectReferences": {
-              "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-                "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+              "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+                "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
               }
             }
           },
           "net8.0-ios18.0": {
             "targetAlias": "net8.0-ios",
             "projectReferences": {
-              "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-                "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+              "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+                "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
               }
             }
           },
           "net8.0-maccatalyst18.0": {
             "targetAlias": "net8.0-maccatalyst",
             "projectReferences": {
-              "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-                "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+              "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+                "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
               }
             }
           },
           "net8.0-windows10.0.19041": {
             "targetAlias": "net8.0-windows10.0.19041.0",
             "projectReferences": {
-              "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-                "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+              "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+                "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
               }
             }
           }

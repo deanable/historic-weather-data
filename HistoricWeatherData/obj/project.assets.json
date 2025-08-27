@@ -2209,7 +2209,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -4426,7 +4426,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -6643,7 +6643,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -8860,7 +8860,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -11077,7 +11077,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -13294,7 +13294,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -15511,7 +15511,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -17728,7 +17728,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -18159,7 +18159,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -18590,7 +18590,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19021,7 +19021,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19452,7 +19452,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19883,7 +19883,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -20314,7 +20314,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -20745,7 +20745,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -21176,7 +21176,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -21607,7 +21607,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22038,7 +22038,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22469,7 +22469,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22900,7 +22900,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -23331,7 +23331,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -23762,7 +23762,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -24193,7 +24193,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -24624,7 +24624,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -33496,11 +33496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
+      "projectUniqueName": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
       "projectName": "HistoricWeatherData",
-      "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
+      "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\HistoricWeatherData.csproj",
       "packagesPath": "C:\\Users\\Dean Kruger\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\obj\\",
+      "outputPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -33526,32 +33526,32 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "projectReferences": {
-            "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-              "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+            "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+              "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
             }
           }
         },
         "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
           "projectReferences": {
-            "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-              "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+            "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+              "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
             }
           }
         },
         "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
           "projectReferences": {
-            "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-              "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+            "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+              "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
             }
           }
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "projectReferences": {
-            "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
-              "projectPath": "c:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
+            "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj": {
+              "projectPath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.Core\\HistoricWeatherData.Core.csproj"
             }
           }
         }
@@ -33808,5 +33808,223 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/android-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/android-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/android-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/iossimulator-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-android34.0/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/android-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/android-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/android-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/iossimulator-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-ios18.0/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/android-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/android-arm64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/android-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/android-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/iossimulator-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/maccatalyst-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
+      "libraryId": "HistoricWeatherData.Core",
+      "targetGraphs": [
+        "net8.0-maccatalyst18.0/win10-x64"
+      ]
+    }
+  ]
 }

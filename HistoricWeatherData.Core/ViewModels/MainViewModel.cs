@@ -216,6 +216,95 @@ namespace HistoricWeatherData.Core.ViewModels
             }
         }
 
+        private async Task LoadWeatherDataAsync()
+        {
+            try
+            {
+                IsLoading = true;
+                StatusMessage = "Loading weather data...";
+
+                var locationData = new LocationData
+                {
+                    Latitude = Latitude,
+                    Longitude = Longitude,
+                    CityName = LocationName
+                };
+
+                var parameters = new WeatherQueryParameters
+                {
+                    Location = locationData,
+                    StartDate = StartDate,
+                    EndDate = EndDate,
+                    YearsBack = YearsBack
+                };
+
+                var response = await _weatherService.GetHistoricalWeatherDataAsync(parameters);
+
+                if (response.IsSuccess)
+                {
+                    WeatherData.Clear();
+                    foreach (var data in response.Data)
+                    {
+                        WeatherData.Add(data);
+                    }
+                    StatusMessage = $"Loaded {response.Data.Count} weather records";
+                }
+                else
+                {
+                    StatusMessage = "Error: {response.ErrorMessage}";
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+
+        private void ClearData()
+        {
+            WeatherData.Clear();
+            StatusMessage = "Data cleared";
+        }
+
+        private async Task NavigateToSettings()
+        {
+            // Navigation will be handled by the UI layer
+        }
+
+        protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+                case "3 Months":
+                    StartDate = now.AddMonths(-3);
+                    EndDate = null;
+                    break;
+                case "6 Months":
+                    StartDate = now.AddMonths(-6);
+                    EndDate = null;
+                    break;
+                case "12 Months":
+                    StartDate = now.AddMonths(-12);
+                    EndDate = null;
+                    break;
+                case "Custom Range":
+                    // Keep current values
+                    break;
+            }
+        }
+
+        private void UpdateEndDate()
+        {
+            if (SelectedTimeRange != "Custom Range")
+            {
+                EndDate = null;
+            }
+        }
+
         private async Task GetCurrentLocationAsync()
         {
             try
