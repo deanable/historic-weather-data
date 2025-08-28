@@ -445,6 +445,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -2209,7 +2250,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -2662,6 +2703,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -4426,7 +4508,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -4879,6 +4961,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -6643,7 +6766,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -7096,6 +7219,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -8860,7 +9024,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -9313,6 +9477,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -11077,7 +11282,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -11530,6 +11735,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -13294,7 +13540,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -13747,6 +13993,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -15511,7 +15798,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -15964,6 +16251,47 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Xamarin.Android.Glide/4.15.1.2": {
         "type": "package",
         "dependencies": {
@@ -17728,7 +18056,7 @@
       },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -18157,9 +18485,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -18588,9 +18957,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19019,9 +19429,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19450,9 +19901,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -19881,9 +20373,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -20312,9 +20845,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -20743,9 +21317,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -21174,9 +21789,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -21605,9 +22261,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22036,9 +22733,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22467,9 +23205,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -22898,9 +23677,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -23329,9 +24149,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -23760,9 +24621,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -24191,9 +25093,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -24622,9 +25565,50 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/HistoricWeatherData.Core.dll": {}
         },
@@ -25222,6 +26206,47 @@
           }
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -25780,6 +26805,47 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
         }
       },
       "HistoricWeatherData.Core/1.0.0": {
@@ -26342,6 +27408,47 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -26900,6 +28007,47 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
         }
       },
       "HistoricWeatherData.Core/1.0.0": {
@@ -27462,6 +28610,47 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -28022,6 +29211,47 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -28580,6 +29810,47 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
         }
       },
       "HistoricWeatherData.Core/1.0.0": {
@@ -29146,6 +30417,47 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/26.1.35": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Maui.Charts/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Maui.Core": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
+      "Syncfusion.Maui.Core/26.1.35": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll": {
+            "related": ".deps.json;.pri;.xml"
+          }
         }
       },
       "HistoricWeatherData.Core/1.0.0": {
@@ -31417,6 +32729,123 @@
         "tools/x86/GenXbf.dll"
       ]
     },
+    "Syncfusion.Licensing/26.1.35": {
+      "sha512": "DPMS7ODbzaS+S2//uOMW8XL/08AEIMz/TEb113gaXdwga328ozz+4wiQGZBJzjLGglyO1vV+GTUigquDGHWcFg==",
+      "type": "package",
+      "path": "syncfusion.licensing/26.1.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net6.0/Syncfusion.Licensing.dll",
+        "lib/net7.0/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.26.1.35.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.Charts/26.1.35": {
+      "sha512": "8uN1SlD3q5rQ8C/C7zpeZ1mQiasXWh7zFa+ZNBFOZXPK4jemdVRrG3dBzSe+SWrPFeH7wLQb0NOGluCQ4FuSpg==",
+      "type": "package",
+      "path": "syncfusion.maui.charts/26.1.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Charts.aar",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Charts.dll",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Charts.xml",
+        "lib/net7.0-ios16.1/Syncfusion.Maui.Charts.dll",
+        "lib/net7.0-ios16.1/Syncfusion.Maui.Charts.xml",
+        "lib/net7.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll",
+        "lib/net7.0-maccatalyst16.1/Syncfusion.Maui.Charts.xml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Charts.deps.json",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Charts.xml",
+        "lib/net7.0/Syncfusion.Maui.Charts.deps.json",
+        "lib/net7.0/Syncfusion.Maui.Charts.dll",
+        "lib/net7.0/Syncfusion.Maui.Charts.xml",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Charts.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Charts.xml",
+        "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.dll",
+        "lib/net8.0-ios16.1/Syncfusion.Maui.Charts.xml",
+        "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.dll",
+        "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Charts.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Charts.xml",
+        "lib/net8.0/Syncfusion.Maui.Charts.deps.json",
+        "lib/net8.0/Syncfusion.Maui.Charts.dll",
+        "lib/net8.0/Syncfusion.Maui.Charts.xml",
+        "syncfusion.maui.charts.26.1.35.nupkg.sha512",
+        "syncfusion.maui.charts.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Maui.Core/26.1.35": {
+      "sha512": "3fu1xLMpiLcj7I766p3mRdVsoH41Y0wQXsQ1MKye8hUF5wnuB3Q3xC4qzT6IapTWuL7F4qWxhx7pie9xb94Y7Q==",
+      "type": "package",
+      "path": "syncfusion.maui.core/26.1.35",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Core.aar",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Core.dll",
+        "lib/net7.0-android33.0/Syncfusion.Maui.Core.xml",
+        "lib/net7.0-ios16.1/Syncfusion.Maui.Core.dll",
+        "lib/net7.0-ios16.1/Syncfusion.Maui.Core.xml",
+        "lib/net7.0-maccatalyst16.1/Syncfusion.Maui.Core.dll",
+        "lib/net7.0-maccatalyst16.1/Syncfusion.Maui.Core.xml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core.pri",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core.xml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xaml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xbf",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xaml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xbf",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xaml",
+        "lib/net7.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xbf",
+        "lib/net7.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net7.0/Syncfusion.Maui.Core.dll",
+        "lib/net7.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-android34.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-ios16.1/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-ios16.1/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-maccatalyst16.1/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.pri",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/CarouselStyles.xbf",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/Resources.xbf",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xaml",
+        "lib/net8.0-windows10.0.19041.0/Syncfusion.Maui.Core/Platform/Windows/Styles/RotatorStyles.xbf",
+        "lib/net8.0/Syncfusion.Maui.Core.deps.json",
+        "lib/net8.0/Syncfusion.Maui.Core.dll",
+        "lib/net8.0/Syncfusion.Maui.Core.xml",
+        "syncfusion.maui.core.26.1.35.nupkg.sha512",
+        "syncfusion.maui.core.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Xamarin.Android.Glide/4.15.1.2": {
       "sha512": "DcekP+BXm4jFMV7zjHEltj01uiXcItq1kjGa79pj/Vx1rk3Ac2VXdmwGw06HXDP8n2XZsDh8dAoSI48G4KODRA==",
       "type": "package",
@@ -33466,27 +34895,35 @@
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.19"
+      "Microsoft.NET.ILLink.Tasks >= 8.0.19",
+      "Syncfusion.Maui.Charts >= 26.1.35",
+      "Syncfusion.Maui.Core >= 26.1.35"
     ],
     "net8.0-ios18.0": [
       "HistoricWeatherData.Core >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.19"
+      "Microsoft.NET.ILLink.Tasks >= 8.0.19",
+      "Syncfusion.Maui.Charts >= 26.1.35",
+      "Syncfusion.Maui.Core >= 26.1.35"
     ],
     "net8.0-maccatalyst18.0": [
       "HistoricWeatherData.Core >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.19"
+      "Microsoft.NET.ILLink.Tasks >= 8.0.19",
+      "Syncfusion.Maui.Charts >= 26.1.35",
+      "Syncfusion.Maui.Core >= 26.1.35"
     ],
     "net8.0-windows10.0.19041": [
       "HistoricWeatherData.Core >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
-      "Microsoft.Maui.Controls.Compatibility >= 8.0.100"
+      "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
+      "Syncfusion.Maui.Charts >= 26.1.35",
+      "Syncfusion.Maui.Core >= 26.1.35"
     ]
   },
   "packageFolders": {
@@ -33589,6 +35026,14 @@
             "target": "Package",
             "version": "[8.0.19, )",
             "autoReferenced": true
+          },
+          "Syncfusion.Maui.Charts": {
+            "target": "Package",
+            "version": "[26.1.35, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[26.1.35, )"
           }
         },
         "imports": [
@@ -33654,6 +35099,14 @@
             "target": "Package",
             "version": "[8.0.19, )",
             "autoReferenced": true
+          },
+          "Syncfusion.Maui.Charts": {
+            "target": "Package",
+            "version": "[26.1.35, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[26.1.35, )"
           }
         },
         "imports": [
@@ -33707,6 +35160,14 @@
             "target": "Package",
             "version": "[8.0.19, )",
             "autoReferenced": true
+          },
+          "Syncfusion.Maui.Charts": {
+            "target": "Package",
+            "version": "[26.1.35, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[26.1.35, )"
           }
         },
         "imports": [
@@ -33755,6 +35216,14 @@
           "Microsoft.Maui.Controls.Compatibility": {
             "target": "Package",
             "version": "[8.0.100, )"
+          },
+          "Syncfusion.Maui.Charts": {
+            "target": "Package",
+            "version": "[26.1.35, )"
+          },
+          "Syncfusion.Maui.Core": {
+            "target": "Package",
+            "version": "[26.1.35, )"
           }
         },
         "imports": [
@@ -33808,223 +35277,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0). Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/android-arm"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/android-arm64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/android-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/android-x86"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/iossimulator-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/maccatalyst-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-android34.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-android34.0/win10-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/android-arm"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/android-arm64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/android-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/android-x86"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/iossimulator-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/maccatalyst-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-ios18.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-ios18.0/win10-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-arm. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/android-arm"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-arm64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/android-arm64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/android-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / android-x86. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/android-x86"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / iossimulator-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/iossimulator-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / maccatalyst-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/maccatalyst-x64"
-      ]
-    },
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project HistoricWeatherData.Core is not compatible with net8.0-maccatalyst18.0 (.NETCoreApp,Version=v8.0) / win10-x64. Project HistoricWeatherData.Core supports: net8.0-windows7.0 (.NETCoreApp,Version=v8.0)",
-      "libraryId": "HistoricWeatherData.Core",
-      "targetGraphs": [
-        "net8.0-maccatalyst18.0/win10-x64"
-      ]
-    }
-  ]
+  }
 }

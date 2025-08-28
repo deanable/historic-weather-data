@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:input="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
-             xmlns:viewmodels="clr-namespace:HistoricWeatherData.ViewModels"
+             xmlns:viewmodels="clr-namespace:HistoricWeatherData.Core.ViewModels;assembly=HistoricWeatherData.Core"
              x:Class="HistoricWeatherData.MainPage"
              Title="Historical Weather Data">
 

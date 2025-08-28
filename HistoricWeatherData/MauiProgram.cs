@@ -1,5 +1,6 @@
 using HistoricWeatherData.Core.Services.Interfaces;
 using HistoricWeatherData.Core.Services.Implementations;
+using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace HistoricWeatherData;

@@ -1,6 +1,6 @@
 using HistoricWeatherData.Core.ViewModels;
 
-namespace HistoricWeatherData.Views;
+namespace HistoricWeatherData;
 
 public partial class MainPage : ContentPage
 {

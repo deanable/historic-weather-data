@@ -40,7 +40,6 @@ namespace HistoricWeatherData.Core.ViewModels
             LoadWeatherDataCommand = new RelayCommand(async () => await LoadWeatherDataAsync());
             ClearDataCommand = new RelayCommand(ClearData);
             NavigateToSettingsCommand = new RelayCommand(async () => await NavigateToSettings());
-            GetCurrentLocationCommand = new RelayCommand(async () => await GetCurrentLocationAsync());
         }
 
         public ObservableCollection<WeatherData> WeatherData { get; }
@@ -165,193 +164,11 @@ namespace HistoricWeatherData.Core.ViewModels
             }
         }
 
-                public ICommand LoadWeatherDataCommand { get; }
+        public ICommand LoadWeatherDataCommand { get; }
         public ICommand ClearDataCommand { get; }
         public ICommand NavigateToSettingsCommand { get; }
 
         private void UpdateDateRange()
-        {
-            var now = DateTime.Now;
-            switch (SelectedTimeRange)
-            {
-                case "1 Day":
-                    StartDate = now.AddDays(-1);
-                    EndDate = null;
-                    break;
-                case "1 Week":
-                    StartDate = now.AddDays(-7);
-                    EndDate = null;
-                    break;
-                case "14 Days":
-                    StartDate = now.AddDays(-14);
-                    EndDate = null;
-                    break;
-                case "30 Days":
-                    StartDate = now.AddDays(-30);
-                    EndDate = null;
-                    break;
-                case "3 Months":
-                    StartDate = now.AddMonths(-3);
-                    EndDate = null;
-                    break;
-                case "6 Months":
-                    StartDate = now.AddMonths(-6);
-                    EndDate = null;
-                    break;
-                case "12 Months":
-                    StartDate = now.AddMonths(-12);
-                    EndDate = null;
-                    break;
-                case "Custom Range":
-                    // Keep current values
-                    break;
-            }
-        }
-
-        private void UpdateEndDate()
-        {
-            if (SelectedTimeRange != "Custom Range")
-            {
-                EndDate = null;
-            }
-        }
-
-        private async Task LoadWeatherDataAsync()
-        {
-            try
-            {
-                IsLoading = true;
-                StatusMessage = "Loading weather data...";
-
-                var locationData = new LocationData
-                {
-                    Latitude = Latitude,
-                    Longitude = Longitude,
-                    CityName = LocationName
-                };
-
-                var parameters = new WeatherQueryParameters
-                {
-                    Location = locationData,
-                    StartDate = StartDate,
-                    EndDate = EndDate,
-                    YearsBack = YearsBack
-                };
-
-                var response = await _weatherService.GetHistoricalWeatherDataAsync(parameters);
-
-                if (response.IsSuccess)
-                {
-                    WeatherData.Clear();
-                    foreach (var data in response.Data)
-                    {
-                        WeatherData.Add(data);
-                    }
-                    StatusMessage = $"Loaded {response.Data.Count} weather records";
-                }
-                else
-                {
-                    StatusMessage = "Error: {response.ErrorMessage}";
-                }
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = $"Error: {ex.Message}";
-            }
-            finally
-            {
-                IsLoading = false;
-            }
-        }
-
-        private void ClearData()
-        {
-            WeatherData.Clear();
-            StatusMessage = "Data cleared";
-        }
-
-        private async Task NavigateToSettings()
-        {
-            // Navigation will be handled by the UI layer
-        }
-
-        protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-                case "3 Months":
-                    StartDate = now.AddMonths(-3);
-                    EndDate = null;
-                    break;
-                case "6 Months":
-                    StartDate = now.AddMonths(-6);
-                    EndDate = null;
-                    break;
-                case "12 Months":
-                    StartDate = now.AddMonths(-12);
-                    EndDate = null;
-                    break;
-                case "Custom Range":
-                    // Keep current values
-                    break;
-            }
-        }
-
-        private void UpdateEndDate()
-        {
-            if (SelectedTimeRange != "Custom Range")
-            {
-                EndDate = null;
-            }
-        }
-
-        private async Task GetCurrentLocationAsync()
-        {
-            try
-            {
-                IsLoading = true;
-                StatusMessage = "Getting current location...";
-
-                var location = await Geolocation.GetLastKnownLocationAsync();
-                if (location == null)
-                {
-                    location = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10)));
-                }
-
-                if (location != null)
-                {
-                    Latitude = location.Latitude;
-                    Longitude = location.Longitude;
-
-                    var placemarks = await Geocoding.GetPlacemarksAsync(location.Latitude, location.Longitude);
-                    var placemark = placemarks?.FirstOrDefault();
-                    if (placemark != null)
-                    {
-                        LocationName = $"{placemark.Locality}, {placemark.AdminArea}";
-                    }
-                    else
-                    {
-                        LocationName = "Unknown";
-                    }
-
-                    StatusMessage = "Current location found";
-                }
-                else
-                {
-                    StatusMessage = "Unable to get current location";
-                }
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = $"Error: {ex.Message}";
-            }
-            finally
-            {
-                IsLoading = false;
-            }
-        }
-
-                private void UpdateDateRange()
         {
             var now = DateTime.Now;
             switch (SelectedTimeRange)
@@ -455,27 +272,7 @@ namespace HistoricWeatherData.Core.ViewModels
         private async Task NavigateToSettings()
         {
             // Navigation will be handled by the UI layer
-        }
-
-        protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void ClearData()
-        {
-            WeatherData.Clear();
-            StatusMessage = "Data cleared";
-        }
-
-        private async void NavigateToSettings()
-        {
-            var settingsViewModel = await SettingsViewModel.Create(_settingsService);
-            var settingsPage = new Views.SettingsPage(settingsViewModel);
-            if (Application.Current?.MainPage != null)
-            {
-                await Application.Current.MainPage.Navigation.PushAsync(settingsPage);
-            }
+            await Task.CompletedTask;
         }
 
         protected virtual void OnPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
