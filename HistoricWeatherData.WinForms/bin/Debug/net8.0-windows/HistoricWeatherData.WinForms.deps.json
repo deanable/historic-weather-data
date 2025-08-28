@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "HistoricWeatherData.WinForms/1.0.0": {
+        "dependencies": {
+          "HistoricWeatherData.Core": "1.0.0"
+        },
+        "runtime": {
+          "HistoricWeatherData.WinForms.dll": {}
+        }
+      },
+      "HistoricWeatherData.Core/1.0.0": {
+        "runtime": {
+          "HistoricWeatherData.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HistoricWeatherData.WinForms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HistoricWeatherData.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

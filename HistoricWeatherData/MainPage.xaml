@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:input="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:viewmodels="clr-namespace:HistoricWeatherData.Core.ViewModels;assembly=HistoricWeatherData.Core"
+             x:Class="HistoricWeatherData.MainPage"
+             Title="Historical Weather Data">
+
+    <!-- BindingContext is set in code-behind via dependency injection -->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Command="{Binding NavigateToSettingsCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+
+            <!-- Header -->
+            <Label Text="Historical Weather Analytics"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Location Input -->
+            <Frame CornerRadius="8" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Location" FontSize="18" FontAttributes="Bold" />
+
+                    <HorizontalStackLayout Spacing="12">
+                        <VerticalStackLayout>
+                            <Label Text="Latitude" FontSize="14" />
+                            <Entry Text="{Binding Latitude, StringFormat='{0:F6}'}"
+                                   Keyboard="Numeric"
+                                   Placeholder="40.7128" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label Text="Longitude" FontSize="14" />
+                            <Entry Text="{Binding Longitude, StringFormat='{0:F6}'}"
+                                   Keyboard="Numeric"
+                                   Placeholder="-74.0060" />
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Label Text="Location Name" FontSize="14" />
+                    <Entry Text="{Binding LocationName}"
+                           Placeholder="New York, NY" />
+                    <Button Text="Get Current Location"
+                            Command="{Binding GetCurrentLocationCommand}"
+                            IsEnabled="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
+                            BackgroundColor="#007ACC"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Date Range Selection -->
+            <Frame CornerRadius="8" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Date Range" FontSize="18" FontAttributes="Bold" />
+
+                    <!-- Time Range Radio Buttons -->
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Preset Ranges:" FontSize="14" />
+                        <VerticalStackLayout Spacing="4">
+                            <RadioButton Content="1 Day" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=1 Day}" />
+                            <RadioButton Content="1 Week" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=1 Week}" />
+                            <RadioButton Content="14 Days" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=14 Days}" />
+                            <RadioButton Content="30 Days" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=30 Days}" />
+                            <RadioButton Content="3 Months" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=3 Months}" />
+                            <RadioButton Content="6 Months" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=6 Months}" />
+                            <RadioButton Content="12 Months" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=12 Months}" />
+                            <RadioButton Content="Custom Range" IsChecked="{Binding SelectedTimeRange, Converter={StaticResource StringToBoolConverter}, ConverterParameter=Custom Range}" />
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Custom Date Pickers -->
+                    <VerticalStackLayout Spacing="8" IsVisible="{Binding SelectedTimeRange, Converter={StaticResource StringToVisibilityConverter}, ConverterParameter=Custom Range}">
+                        <Label Text="Custom Range:" FontSize="14" />
+
+                        <HorizontalStackLayout Spacing="12">
+                            <VerticalStackLayout>
+                                <Label Text="Start Date" FontSize="12" />
+                                <DatePicker Date="{Binding StartDate}" />
+                            </VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Label Text="End Date" FontSize="12" />
+                                <DatePicker Date="{Binding EndDate}" IsVisible="{Binding EndDate, Converter={StaticResource NullToVisibilityConverter}}" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Years Back Slider -->
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Years of Historical Data" FontSize="14" />
+                        <Label Text="{Binding YearsBack, StringFormat='Compare with past {0} year(s)'}" FontSize="12" />
+                        <Slider Minimum="1" Maximum="10" Value="{Binding YearsBack}" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Control Buttons -->
+            <HorizontalStackLayout Spacing="12">
+                <Button Text="Load Weather Data"
+                        Command="{Binding LoadWeatherDataCommand}"
+                        IsEnabled="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+
+                <Button Text="Clear Data"
+                        Command="{Binding ClearDataCommand}"
+                        BackgroundColor="#DC3545"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+            </HorizontalStackLayout>
+
+            <!-- Status Message -->
+            <Label Text="{Binding StatusMessage}"
+                   FontSize="14"
+                   TextColor="{Binding IsLoading, Converter={StaticResource BoolToColorConverter}}"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Weather Data Chart -->
+            <Frame CornerRadius="8" Padding="16" IsVisible="{Binding WeatherData.Count, Converter={StaticResource CountToVisibilityConverter}}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Weather Data Visualization" FontSize="18" FontAttributes="Bold" />
+
+                    <syncfusion:SfCartesianChart HeightRequest="400">
+                        <syncfusion:SfCartesianChart.XAxes>
+                            <syncfusion:CategoryAxis />
+                        </syncfusion:SfCartesianChart.XAxes>
+
+                        <syncfusion:SfCartesianChart.YAxes>
+                            <syncfusion:NumericalAxis />
+                        </syncfusion:SfCartesianChart.YAxes>
+
+                        <syncfusion:SfCartesianChart.Series>
+                            <syncfusion:LineSeries ItemsSource="{Binding WeatherData}"
+                                                 XBindingPath="Date"
+                                                 YBindingPath="TemperatureMax"
+                                                 Label="Max Temperature (°C)" />
+                            <syncfusion:LineSeries ItemsSource="{Binding WeatherData}"
+                                                 XBindingPath="Date"
+                                                 YBindingPath="TemperatureMin"
+                                                 Label="Min Temperature (°C)" />
+                            <syncfusion:ColumnSeries ItemsSource="{Binding WeatherData}"
+                                                   XBindingPath="Date"
+                                                   YBindingPath="Precipitation"
+                                                   Label="Precipitation (mm)" />
+                        </syncfusion:SfCartesianChart.Series>
+
+                        <syncfusion:SfCartesianChart.Legend>
+                            <syncfusion:ChartLegend />
+                        </syncfusion:SfCartesianChart.Legend>
+                    </syncfusion:SfCartesianChart>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Data Grid/List -->
+            <Frame CornerRadius="8" Padding="16" IsVisible="{Binding WeatherData.Count, Converter={StaticResource CountToVisibilityConverter}}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Weather Data Details" FontSize="18" FontAttributes="Bold" />
+
+                    <CollectionView ItemsSource="{Binding WeatherData}" HeightRequest="300">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="4" Padding="8" Margin="0,2">
+                                    <Grid ColumnDefinitions="*,*,*,*">
+                                        <Label Grid.Column="0" Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" FontSize="12" />
+                                        <Label Grid.Column="1" Text="{Binding TemperatureMax, StringFormat='Max: {0:F1}°C'}" FontSize="12" />
+                                        <Label Grid.Column="2" Text="{Binding TemperatureMin, StringFormat='Min: {0:F1}°C'}" FontSize="12" />
+                                        <Label Grid.Column="3" Text="{Binding Precipitation, StringFormat='Rain: {0:F1}mm'}" FontSize="12" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
