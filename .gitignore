@@ -2,3 +2,6 @@
 ## Ignore Visual Studio temporary files, build results, and generated files
 /bin
 /obj
+
+## Ignore personal configuration files
+.roo/
