@@ -18,7 +18,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
         {
             _httpClient = new HttpClient();
             _geocodingService = geocodingService;
-            _loggingService = new ConsoleLoggingService(); // Could be injected via DI
+            _loggingService = new CompositeLoggingService(); // File + Console logging
         }
 
         public OpenMeteoWeatherService(IReverseGeocodingService geocodingService, ILoggingService loggingService)
@@ -137,16 +137,20 @@ namespace HistoricWeatherData.Core.Services.Implementations
                     return new List<WeatherData>();
                 }
 
+                // Ensure coordinates use dots instead of commas (API requirement)
+                var formattedLatitude = latitude.ToString("F6").Replace(',', '.');
+                var formattedLongitude = longitude.ToString("F6").Replace(',', '.');
+
                 var url = $"https://archive-api.open-meteo.com/v1/archive?" +
-                         $"latitude={latitude}&longitude={longitude}" +
+                         $"latitude={formattedLatitude}&longitude={formattedLongitude}" +
                          $"&start_date={yearStartDate:yyyy-MM-dd}&end_date={yearEndDate:yyyy-MM-dd}" +
                          $"&daily=temperature_2m_max,temperature_2m_min,precipitation_sum" +
                          $"&timezone=auto";
 
                 _loggingService.LogApiRequest($"OpenMeteo-Year{year}", url, new Dictionary<string, string>
                 {
-                    ["latitude"] = latitude.ToString(),
-                    ["longitude"] = longitude.ToString(),
+                    ["latitude"] = formattedLatitude,
+                    ["longitude"] = formattedLongitude,
                     ["start_date"] = yearStartDate.ToString("yyyy-MM-dd"),
                     ["end_date"] = yearEndDate.ToString("yyyy-MM-dd"),
                     ["daily"] = "temperature_2m_max,temperature_2m_min,precipitation_sum",

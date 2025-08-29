@@ -13,12 +13,16 @@ namespace HistoricWeatherData.Core.Services.Implementations
         public ReverseGeocodingService()
         {
             _httpClient = new HttpClient();
-            _loggingService = new ConsoleLoggingService(); // Could be injected via DI
+            // Add User-Agent header to comply with Nominatim terms of service
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "HistoricWeatherData/1.0 (deanable@github.com)");
+            _loggingService = new CompositeLoggingService(); // File + Console logging
         }
 
         public ReverseGeocodingService(ILoggingService loggingService)
         {
             _httpClient = new HttpClient();
+            // Add User-Agent header to comply with Nominatim terms of service
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "HistoricWeatherData/1.0 (deanable@github.com)");
             _loggingService = loggingService;
         }
 

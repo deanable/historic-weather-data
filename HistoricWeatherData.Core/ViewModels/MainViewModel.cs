@@ -43,6 +43,11 @@ namespace HistoricWeatherData.Core.ViewModels
         }
 
         public ObservableCollection<WeatherData> WeatherData { get; }
+
+        private void NotifyWeatherDataChanged()
+        {
+            OnPropertyChanged("WeatherData");
+        }
         public ObservableCollection<string> TimeRanges { get; }
 
         public DateTime StartDate
@@ -175,31 +180,31 @@ namespace HistoricWeatherData.Core.ViewModels
             {
                 case "1 Day":
                     StartDate = now.AddDays(-1);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "1 Week":
                     StartDate = now.AddDays(-7);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "14 Days":
                     StartDate = now.AddDays(-14);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "30 Days":
                     StartDate = now.AddDays(-30);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "3 Months":
                     StartDate = now.AddMonths(-3);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "6 Months":
                     StartDate = now.AddMonths(-6);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "12 Months":
                     StartDate = now.AddMonths(-12);
-                    EndDate = null;
+                    EndDate = now;
                     break;
                 case "Custom Range":
                     // Keep current values
@@ -246,6 +251,7 @@ namespace HistoricWeatherData.Core.ViewModels
                     {
                         WeatherData.Add(data);
                     }
+                    NotifyWeatherDataChanged();
                     StatusMessage = $"Loaded {response.Data.Count} weather records";
                 }
                 else
@@ -266,6 +272,7 @@ namespace HistoricWeatherData.Core.ViewModels
         private void ClearData()
         {
             WeatherData.Clear();
+            NotifyWeatherDataChanged();
             StatusMessage = "Data cleared";
         }
 
