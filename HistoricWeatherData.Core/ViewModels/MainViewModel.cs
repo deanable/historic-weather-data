@@ -45,7 +45,8 @@ namespace HistoricWeatherData.Core.ViewModels
             {
                 "OpenMeteo",
                 "Visual Crossing",
-                "Dummy Provider"
+                "OpenWeatherMap",
+                "WeatherAPI"
             };
             SelectedWeatherProvider = WeatherProviders.First();
             Years = new ObservableCollection<int>(Enumerable.Range(1, 10));

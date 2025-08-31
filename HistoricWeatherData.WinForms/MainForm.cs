@@ -200,6 +200,18 @@ namespace HistoricWeatherData.WinForms
             clearDataButton.Width = 100;
             clearDataButton.Click += (s, e) => _viewModel.ClearDataCommand.Execute(null);
 
+            var settingsButton = new Button
+            {
+                Text = "Settings",
+                Location = new Point(940, 30),
+                Width = 100
+            };
+            settingsButton.Click += (s, e) =>
+            {
+                var settingsForm = new SettingsForm(new SettingsService());
+                settingsForm.ShowDialog();
+            };
+
             // Initialize date picker visibility
             UpdateDatePickerVisibility();
 
@@ -215,7 +227,7 @@ namespace HistoricWeatherData.WinForms
                 // Row 3
                 exportFormatLabel, exportFormatComboBox, exportAveragesCheckBox,
                 // Buttons
-                loadDataButton, exportDataButton, clearDataButton
+                loadDataButton, exportDataButton, clearDataButton, settingsButton
             });
 
             return panel;

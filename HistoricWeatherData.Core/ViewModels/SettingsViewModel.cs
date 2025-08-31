@@ -10,7 +10,7 @@ namespace HistoricWeatherData.Core.ViewModels
         private string _syncfusionLicenseKey = string.Empty;
         private string _openWeatherMapKey = string.Empty;
         private string _visualCrossingKey = string.Empty;
-        private string _weatherApiComKey = string.Empty;
+        private string _weatherAPIKey = string.Empty;
         private string _nasaPowerKey = string.Empty;
         private string _statusMessage = string.Empty;
         private bool _isSuccess;
@@ -73,14 +73,14 @@ namespace HistoricWeatherData.Core.ViewModels
             }
         }
 
-        public string WeatherApiComKey
+        public string WeatherAPIKey
         {
-            get => _weatherApiComKey;
+            get => _weatherAPIKey;
             set
             {
-                if (_weatherApiComKey != value)
+                if (_weatherAPIKey != value)
                 {
-                    _weatherApiComKey = value;
+                    _weatherAPIKey = value;
                     OnPropertyChanged();
                 }
             }
@@ -152,10 +152,10 @@ namespace HistoricWeatherData.Core.ViewModels
                     VisualCrossingKey = vcKey;
                 }
 
-                var wacKey = await _settingsService.GetApiKeyAsync("WeatherApiCom");
+                var wacKey = await _settingsService.GetApiKeyAsync("WeatherAPI");
                 if (!string.IsNullOrEmpty(wacKey))
                 {
-                    WeatherApiComKey = wacKey;
+                    WeatherAPIKey = wacKey;
                 }
 
                 var npKey = await _settingsService.GetApiKeyAsync("NasaPower");
@@ -207,9 +207,9 @@ namespace HistoricWeatherData.Core.ViewModels
                     await _settingsService.SaveApiKeyAsync("VisualCrossing", VisualCrossingKey);
                 }
 
-                if (!string.IsNullOrWhiteSpace(WeatherApiComKey))
+                if (!string.IsNullOrWhiteSpace(WeatherAPIKey))
                 {
-                    await _settingsService.SaveApiKeyAsync("WeatherApiCom", WeatherApiComKey);
+                    await _settingsService.SaveApiKeyAsync("WeatherAPI", WeatherAPIKey);
                 }
 
                 if (!string.IsNullOrWhiteSpace(NasaPowerKey))
@@ -235,7 +235,7 @@ namespace HistoricWeatherData.Core.ViewModels
                 SyncfusionLicenseKey = string.Empty;
                 OpenWeatherMapKey = string.Empty;
                 VisualCrossingKey = string.Empty;
-                WeatherApiComKey = string.Empty;
+                WeatherAPIKey = string.Empty;
                 NasaPowerKey = string.Empty;
 
                 StatusMessage = "All settings cleared successfully";

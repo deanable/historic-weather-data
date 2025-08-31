@@ -1,5 +1,6 @@
 using HistoricWeatherData.Core.Models;
 using HistoricWeatherData.Core.Services.Interfaces;
+using System.Net.Http;
 using System.Net.Http.Json;
 
 namespace HistoricWeatherData.Core.Services.Implementations
@@ -14,9 +15,13 @@ namespace HistoricWeatherData.Core.Services.Implementations
         public bool RequiresApiKey => true;
 
         public WeatherAPIWeatherService(ILoggingService loggingService, ISettingsService settingsService)
+            : this(loggingService, settingsService, new HttpClient { Timeout = TimeSpan.FromSeconds(300) })
         {
-            _httpClient = new HttpClient();
-            _httpClient.Timeout = TimeSpan.FromSeconds(300);
+        }
+
+        public WeatherAPIWeatherService(ILoggingService loggingService, ISettingsService settingsService, HttpClient httpClient)
+        {
+            _httpClient = httpClient;
             _loggingService = loggingService;
             _settingsService = settingsService;
         }
