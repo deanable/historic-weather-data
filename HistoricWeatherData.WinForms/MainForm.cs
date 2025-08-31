@@ -14,17 +14,22 @@ namespace HistoricWeatherData.WinForms
     public class MainForm : Form
     {
         private readonly MainViewModel _viewModel;
-        private DataGridView weatherDataGrid;
-        private TextBox locationTextBox;
-        private ComboBox timeRangeComboBox;
-        private DateTimePicker startDatePicker;
-        private DateTimePicker endDatePicker;
-        private Label endDateLabel;
-        private Button loadDataButton;
-        private Button clearDataButton;
-        private Label statusLabel;
-        private ProgressBar loadingProgressBar;
-        private TableLayoutPanel mainPanel;
+        private DataGridView weatherDataGrid = null!;
+        private TextBox locationTextBox = null!;
+        private ComboBox timeRangeComboBox = null!;
+        private ComboBox weatherProviderComboBox = null!;
+        private ComboBox yearsComboBox = null!;
+        private CheckBox exportAveragesCheckBox = null!;
+        private ComboBox exportFormatComboBox = null!;
+        private DateTimePicker startDatePicker = null!;
+        private DateTimePicker endDatePicker = null!;
+        private Label endDateLabel = null!;
+        private Button loadDataButton = null!;
+        private Button exportDataButton = null!;
+        private Button clearDataButton = null!;
+        private Label statusLabel = null!;
+        private ProgressBar loadingProgressBar = null!;
+        private TableLayoutPanel mainPanel = null!;
 
         public MainForm()
         {
@@ -32,7 +37,8 @@ namespace HistoricWeatherData.WinForms
             var geocodingService = new ReverseGeocodingService();
             var weatherService = new OpenMeteoWeatherService(geocodingService);
             var settingsService = new SettingsService();
-            _viewModel = new MainViewModel(weatherService, geocodingService, settingsService);
+            var dataExportService = new DataExportService();
+            _viewModel = new MainViewModel(weatherService, geocodingService, settingsService, dataExportService);
 
             _viewModel.PropertyChanged += ViewModel_PropertyChanged;
 
@@ -46,10 +52,15 @@ namespace HistoricWeatherData.WinForms
             weatherDataGrid = new DataGridView();
             locationTextBox = new TextBox();
             timeRangeComboBox = new ComboBox();
+            weatherProviderComboBox = new ComboBox();
+            yearsComboBox = new ComboBox();
+            exportAveragesCheckBox = new CheckBox();
+            exportFormatComboBox = new ComboBox();
             startDatePicker = new DateTimePicker();
             endDatePicker = new DateTimePicker();
             endDateLabel = new Label();
             loadDataButton = new Button();
+            exportDataButton = new Button();
             clearDataButton = new Button();
             statusLabel = new Label();
             loadingProgressBar = new ProgressBar();
@@ -63,11 +74,11 @@ namespace HistoricWeatherData.WinForms
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.RowCount = 3;
             mainPanel.ColumnCount = 1;
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 100));  // Controls panel
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 140));  // Controls panel - increased height
             mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));   // Data grid
             mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));  // Status bar
 
-            this.Size = new Size(1200, 800);
+            this.Size = new Size(1400, 900); // Increased width for more controls
         }
 
         private void SetupLayout()
@@ -90,9 +101,9 @@ namespace HistoricWeatherData.WinForms
 
         private Panel CreateControlsPanel()
         {
-            var panel = new Panel { Height = 100, Dock = DockStyle.Top };
+            var panel = new Panel { Height = 140, Dock = DockStyle.Top };
 
-            // Location input
+            // Row 1: Location and Provider
             var locationLabel = new Label { Text = "Location:", Location = new Point(10, 10), AutoSize = true };
             locationTextBox.Text = _viewModel.LocationName;
             locationTextBox.Location = new Point(10, 30);
@@ -103,11 +114,27 @@ namespace HistoricWeatherData.WinForms
                 ValidateLoadButton();
             };
 
-            // Time range selector
-            var timeRangeLabel = new Label { Text = "Time Range:", Location = new Point(250, 10), AutoSize = true };
+            var providerLabel = new Label { Text = "Weather Provider:", Location = new Point(300, 10), AutoSize = true };
+            weatherProviderComboBox.DataSource = _viewModel.WeatherProviders;
+            weatherProviderComboBox.SelectedItem = _viewModel.SelectedWeatherProvider;
+            weatherProviderComboBox.Location = new Point(300, 30);
+            weatherProviderComboBox.Width = 150;
+            weatherProviderComboBox.SelectedIndexChanged += (s, e) =>
+            {
+                _viewModel.SelectedWeatherProvider = weatherProviderComboBox.SelectedItem?.ToString();
+            };
+
+            var yearsLabel = new Label { Text = "Years:", Location = new Point(500, 10), AutoSize = true };
+            yearsComboBox.DataSource = _viewModel.Years;
+            yearsComboBox.SelectedItem = _viewModel.SelectedYear;
+            yearsComboBox.Location = new Point(500, 30);
+            yearsComboBox.Width = 60;
+
+            // Row 2: Time Range and Dates
+            var timeRangeLabel = new Label { Text = "Time Range:", Location = new Point(10, 60), AutoSize = true };
             timeRangeComboBox.DataSource = _viewModel.TimeRanges;
             timeRangeComboBox.SelectedItem = _viewModel.SelectedTimeRange;
-            timeRangeComboBox.Location = new Point(250, 30);
+            timeRangeComboBox.Location = new Point(10, 80);
             timeRangeComboBox.Width = 120;
             timeRangeComboBox.SelectedIndexChanged += (s, e) =>
             {
@@ -115,10 +142,9 @@ namespace HistoricWeatherData.WinForms
                 UpdateDatePickerVisibility();
             };
 
-            // Date range inputs
-            var startLabel = new Label { Text = "Start Date:", Location = new Point(400, 10), AutoSize = true };
+            var startLabel = new Label { Text = "Start Date:", Location = new Point(150, 60), AutoSize = true };
             startDatePicker.Value = _viewModel.StartDate;
-            startDatePicker.Location = new Point(400, 30);
+            startDatePicker.Location = new Point(150, 80);
             startDatePicker.Width = 120;
             startDatePicker.ValueChanged += (s, e) =>
             {
@@ -126,15 +152,34 @@ namespace HistoricWeatherData.WinForms
                 ValidateLoadButton();
             };
 
-            // End date controls (initially hidden)
-            endDateLabel.Location = new Point(550, 10);
+            endDateLabel.Location = new Point(300, 60);
             endDatePicker.Value = DateTime.Now;
-            endDatePicker.Location = new Point(550, 30);
+            endDatePicker.Location = new Point(300, 80);
             endDatePicker.Width = 120;
             endDatePicker.ValueChanged += (s, e) =>
             {
                 _viewModel.EndDate = endDatePicker.Value;
                 ValidateLoadButton();
+            };
+
+            // Row 3: Export options
+            var exportFormatLabel = new Label { Text = "Export Format:", Location = new Point(450, 60), AutoSize = true };
+            exportFormatComboBox.DataSource = _viewModel.ExportFormats;
+            exportFormatComboBox.SelectedItem = _viewModel.SelectedExportFormat;
+            exportFormatComboBox.Location = new Point(450, 80);
+            exportFormatComboBox.Width = 80;
+            exportFormatComboBox.SelectedIndexChanged += (s, e) =>
+            {
+                _viewModel.SelectedExportFormat = exportFormatComboBox.SelectedItem?.ToString();
+            };
+
+            exportAveragesCheckBox.Text = "Include Averages";
+            exportAveragesCheckBox.Checked = _viewModel.ExportAverages;
+            exportAveragesCheckBox.Location = new Point(550, 80);
+            exportAveragesCheckBox.AutoSize = true;
+            exportAveragesCheckBox.CheckedChanged += (s, e) =>
+            {
+                _viewModel.ExportAverages = exportAveragesCheckBox.Checked;
             };
 
             // Action buttons
@@ -143,20 +188,33 @@ namespace HistoricWeatherData.WinForms
             loadDataButton.Width = 120;
             loadDataButton.Click += (s, e) => LoadWeatherData();
 
+            exportDataButton.Text = "Export Data";
+            exportDataButton.Location = new Point(700, 80);
+            exportDataButton.Width = 100;
+            exportDataButton.Click += (s, e) => ExportWeatherData();
+            exportDataButton.Enabled = false; // Initially disabled
+
             clearDataButton.Text = "Clear Data";
-            clearDataButton.Location = new Point(850, 30);
-            clearDataButton.Width = 120;
+            clearDataButton.Location = new Point(820, 30);
+            clearDataButton.Width = 100;
             clearDataButton.Click += (s, e) => _viewModel.ClearDataCommand.Execute(null);
 
             // Initialize date picker visibility
             UpdateDatePickerVisibility();
 
             panel.Controls.AddRange(new Control[] {
+                // Row 1
                 locationLabel, locationTextBox,
+                providerLabel, weatherProviderComboBox,
+                yearsLabel, yearsComboBox,
+                // Row 2
                 timeRangeLabel, timeRangeComboBox,
                 startLabel, startDatePicker,
                 endDateLabel, endDatePicker,
-                loadDataButton, clearDataButton
+                // Row 3
+                exportFormatLabel, exportFormatComboBox, exportAveragesCheckBox,
+                // Buttons
+                loadDataButton, exportDataButton, clearDataButton
             });
 
             return panel;
@@ -182,7 +240,7 @@ namespace HistoricWeatherData.WinForms
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Segoe UI", 9);
 
-            loadingProgressBar.Location = new Point(1100, 8);
+            loadingProgressBar.Location = new Point(1300, 8);
             loadingProgressBar.Width = 80;
             loadingProgressBar.Height = 15;
             loadingProgressBar.Visible = false;
@@ -237,6 +295,9 @@ namespace HistoricWeatherData.WinForms
                 loadDataButton.Enabled = false;
                 statusLabel.Text = errorMessage;
             }
+
+            // Update export button enable state
+            exportDataButton.Enabled = _viewModel.WeatherData.Count > 0 && !_viewModel.IsLoading;
         }
 
         private void LoadWeatherData()
@@ -244,6 +305,14 @@ namespace HistoricWeatherData.WinForms
             if (_viewModel.LoadWeatherDataCommand.CanExecute(null))
             {
                 _viewModel.LoadWeatherDataCommand.Execute(null);
+            }
+        }
+
+        private void ExportWeatherData()
+        {
+            if (_viewModel.ExportWeatherDataCommand.CanExecute(null))
+            {
+                _viewModel.ExportWeatherDataCommand.Execute(null);
             }
         }
 
@@ -271,6 +340,8 @@ namespace HistoricWeatherData.WinForms
                 {
                     bs.ResetBindings(false);
                 }
+                // Update export button state
+                exportDataButton.Enabled = _viewModel.WeatherData.Count > 0 && !_viewModel.IsLoading;
             }
             else if (e.PropertyName == nameof(MainViewModel.LocationName))
             {

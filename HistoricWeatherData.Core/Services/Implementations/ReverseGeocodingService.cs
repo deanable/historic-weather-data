@@ -109,7 +109,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             return CreateFallbackLocation(latitude, longitude, "Unknown location");
         }
 
-        private LocationData CreateFallbackLocation(double latitude, double longitude, string errorReason = null)
+        private LocationData CreateFallbackLocation(double latitude, double longitude, string? errorReason = null)
         {
             var location = new LocationData
             {

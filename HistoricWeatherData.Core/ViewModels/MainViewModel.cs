@@ -11,24 +11,29 @@ namespace HistoricWeatherData.Core.ViewModels
         private readonly IWeatherDataService _weatherService;
         private readonly IReverseGeocodingService _geocodingService;
         private readonly ISettingsService _settingsService;
+        private readonly IDataExportService _dataExportService;
 
         private DateTime _startDate = DateTime.Now.AddDays(-7);
         private DateTime? _endDate;
-        private int _yearsBack = 1;
+        private int _selectedYear = 1;
         private string _selectedTimeRange = "1 Week";
         private double _latitude = 40.7128; // Default to New York
         private double _longitude = -74.0060;
         private string _locationName = "New York, NY";
         private bool _isLoading;
         private string _statusMessage = "Ready";
+        private string? _selectedWeatherProvider;
+        private bool _exportAverages;
+        private string? _selectedExportFormat;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel(IWeatherDataService weatherService, IReverseGeocodingService geocodingService, ISettingsService settingsService)
+        public MainViewModel(IWeatherDataService weatherService, IReverseGeocodingService geocodingService, ISettingsService settingsService, IDataExportService dataExportService)
         {
             _weatherService = weatherService;
             _geocodingService = geocodingService;
             _settingsService = settingsService;
+            _dataExportService = dataExportService;
 
             WeatherData = new ObservableCollection<WeatherData>();
             TimeRanges = new ObservableCollection<string>
@@ -36,13 +41,27 @@ namespace HistoricWeatherData.Core.ViewModels
                 "1 Day", "1 Week", "14 Days", "30 Days",
                 "3 Months", "6 Months", "12 Months", "Custom Range"
             };
+            WeatherProviders = new ObservableCollection<string>
+            {
+                "OpenMeteo",
+                "Dummy Provider"
+            };
+            SelectedWeatherProvider = WeatherProviders.First();
+            Years = new ObservableCollection<int>(Enumerable.Range(1, 10));
+            SelectedYear = Years.First();
+            ExportFormats = new ObservableCollection<string> { "CSV", "Excel" };
+            SelectedExportFormat = ExportFormats.First();
 
             LoadWeatherDataCommand = new RelayCommand(async () => await LoadWeatherDataAsync());
             ClearDataCommand = new RelayCommand(ClearData);
             NavigateToSettingsCommand = new RelayCommand(async () => await NavigateToSettings());
+            ExportWeatherDataCommand = new RelayCommand(async () => await ExportWeatherDataAsync());
         }
 
         public ObservableCollection<WeatherData> WeatherData { get; }
+        public ObservableCollection<string> WeatherProviders { get; }
+        public ObservableCollection<int> Years { get; }
+        public ObservableCollection<string> ExportFormats { get; }
 
         private void NotifyWeatherDataChanged()
         {
@@ -77,14 +96,53 @@ namespace HistoricWeatherData.Core.ViewModels
             }
         }
 
-        public int YearsBack
+        public int SelectedYear
         {
-            get => _yearsBack;
+            get => _selectedYear;
             set
             {
-                if (_yearsBack != value)
+                if (_selectedYear != value)
                 {
-                    _yearsBack = value;
+                    _selectedYear = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string? SelectedWeatherProvider
+        {
+            get => _selectedWeatherProvider;
+            set
+            {
+                if (_selectedWeatherProvider != value)
+                {
+                    _selectedWeatherProvider = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool ExportAverages
+        {
+            get => _exportAverages;
+            set
+            {
+                if (_exportAverages != value)
+                {
+                    _exportAverages = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string? SelectedExportFormat
+        {
+            get => _selectedExportFormat;
+            set
+            {
+                if (_selectedExportFormat != value)
+                {
+                    _selectedExportFormat = value;
                     OnPropertyChanged();
                 }
             }
@@ -172,6 +230,7 @@ namespace HistoricWeatherData.Core.ViewModels
         public ICommand LoadWeatherDataCommand { get; }
         public ICommand ClearDataCommand { get; }
         public ICommand NavigateToSettingsCommand { get; }
+        public ICommand ExportWeatherDataCommand { get; }
 
         private void UpdateDateRange()
         {
@@ -239,7 +298,8 @@ namespace HistoricWeatherData.Core.ViewModels
                     Location = locationData,
                     StartDate = StartDate,
                     EndDate = EndDate,
-                    YearsBack = YearsBack
+                    YearsBack = SelectedYear,
+                    ProviderName = SelectedWeatherProvider ?? string.Empty
                 };
 
                 var response = await _weatherService.GetHistoricalWeatherDataAsync(parameters);
@@ -262,6 +322,43 @@ namespace HistoricWeatherData.Core.ViewModels
             catch (Exception ex)
             {
                 StatusMessage = $"Error: {ex.Message}";
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
+
+        private async Task ExportWeatherDataAsync()
+        {
+            if (WeatherData.Count == 0)
+            {
+                StatusMessage = "No weather data to export.";
+                return;
+            }
+
+            try
+            {
+                IsLoading = true;
+                StatusMessage = "Exporting weather data...";
+
+                var location = LocationName;
+                var dataToExport = new List<WeatherData>(WeatherData);
+
+                if (SelectedExportFormat == "CSV")
+                {
+                    await _dataExportService.ExportDataAsCsvAsync(location, dataToExport, ExportAverages);
+                }
+                else
+                {
+                    await _dataExportService.ExportDataAsExcelAsync(location, dataToExport, ExportAverages);
+                }
+
+                StatusMessage = "Weather data export initiated.";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error exporting data: {ex.Message}";
             }
             finally
             {

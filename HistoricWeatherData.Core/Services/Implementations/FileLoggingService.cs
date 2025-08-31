@@ -13,7 +13,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
         private readonly List<ApiErrorLog> _errorLogs = new();
         private readonly Dictionary<string, int> _errorCounts = new();
 
-        public FileLoggingService(string logFilePath = null)
+        public FileLoggingService(string? logFilePath = null)
         {
             _logDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
 
@@ -63,7 +63,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             }
         }
 
-        public void LogError(string message, Exception ex = null)
+        public void LogError(string message, Exception? ex = null)
         {
             lock (_logLock)
             {
@@ -134,7 +134,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             }
         }
 
-        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration)
+        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration, Dictionary<string, string>? parameters = null)
         {
             lock (_logLock)
             {
@@ -289,7 +289,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
         private readonly ILoggingService _consoleLogger;
         private readonly FileLoggingService _fileLogger;
 
-        public CompositeLoggingService(string logFilePath = null)
+        public CompositeLoggingService(string? logFilePath = null)
         {
             _consoleLogger = new ConsoleLoggingService();
             _fileLogger = new FileLoggingService(logFilePath);
@@ -307,7 +307,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             _fileLogger.LogWarning(message);
         }
 
-        public void LogError(string message, Exception ex = null)
+        public void LogError(string message, Exception? ex = null)
         {
             _consoleLogger.LogError(message, ex);
             _fileLogger.LogError(message, ex);
@@ -325,10 +325,10 @@ namespace HistoricWeatherData.Core.Services.Implementations
             _fileLogger.LogApiRequest(serviceName, url, parameters);
         }
 
-        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration)
+        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration, Dictionary<string, string>? parameters = null)
         {
-            _consoleLogger.LogApiResponse(serviceName, statusCode, responseContent, duration);
-            _fileLogger.LogApiResponse(serviceName, statusCode, responseContent, duration);
+            _consoleLogger.LogApiResponse(serviceName, statusCode, responseContent, duration, parameters);
+            _fileLogger.LogApiResponse(serviceName, statusCode, responseContent, duration, parameters);
         }
 
         public void LogApiError(string serviceName, string url, Exception ex, TimeSpan duration)
