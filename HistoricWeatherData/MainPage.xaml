@@ -142,6 +142,13 @@
                         BackgroundColor="#DC3545"
                         TextColor="White"
                         HorizontalOptions="FillAndExpand" />
+
+                <Button Text="Export Chart"
+                        Command="{Binding ExportChartCommand}"
+                        CommandParameter="{x:Reference WeatherChartControl}"
+                        BackgroundColor="#17A2B8"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
             </HorizontalStackLayout>
 
             <!-- Status Message -->
@@ -155,7 +162,7 @@
                 <VerticalStackLayout Spacing="12">
                     <Label Text="Weather Data Visualization" FontSize="18" FontAttributes="Bold" />
 
-                    <syncfusion:SfCartesianChart HeightRequest="400">
+                    <syncfusion:SfCartesianChart x:Name="WeatherChartControl" HeightRequest="400">
                         <syncfusion:SfCartesianChart.XAxes>
                             <syncfusion:CategoryAxis />
                         </syncfusion:SfCartesianChart.XAxes>

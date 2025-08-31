@@ -12,6 +12,7 @@ namespace HistoricWeatherData.Core.ViewModels
         private readonly IReverseGeocodingService _geocodingService;
         private readonly ISettingsService _settingsService;
         private readonly IDataExportService _dataExportService;
+        private readonly IChartExportService? _chartExportService; // Nullable for WinForms
 
         private DateTime _startDate = DateTime.Now.AddDays(-7);
         private DateTime? _endDate;
@@ -28,12 +29,13 @@ namespace HistoricWeatherData.Core.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel(IWeatherServiceFactory weatherServiceFactory, IReverseGeocodingService geocodingService, ISettingsService settingsService, IDataExportService dataExportService)
+        public MainViewModel(IWeatherServiceFactory weatherServiceFactory, IReverseGeocodingService geocodingService, ISettingsService settingsService, IDataExportService dataExportService, IChartExportService? chartExportService = null)
         {
             _weatherServiceFactory = weatherServiceFactory;
             _geocodingService = geocodingService;
             _settingsService = settingsService;
             _dataExportService = dataExportService;
+            _chartExportService = chartExportService;
 
             WeatherData = new ObservableCollection<WeatherData>();
             TimeRanges = new ObservableCollection<string>
@@ -54,10 +56,11 @@ namespace HistoricWeatherData.Core.ViewModels
             ExportFormats = new ObservableCollection<string> { "CSV", "Excel" };
             SelectedExportFormat = ExportFormats.First();
 
-            LoadWeatherDataCommand = new RelayCommand(async () => await LoadWeatherDataAsync());
+            LoadWeatherDataCommand = new AsyncRelayCommand(LoadWeatherDataAsync);
             ClearDataCommand = new RelayCommand(ClearData);
-            NavigateToSettingsCommand = new RelayCommand(async () => await NavigateToSettings());
-            ExportWeatherDataCommand = new RelayCommand(async () => await ExportWeatherDataAsync());
+            NavigateToSettingsCommand = new AsyncRelayCommand(NavigateToSettings);
+            ExportWeatherDataCommand = new AsyncRelayCommand(ExportWeatherDataAsync);
+            ExportChartCommand = new AsyncRelayCommand<object?>(ExportChartAsync);
         }
 
         public ObservableCollection<WeatherData> WeatherData { get; }
@@ -233,6 +236,15 @@ namespace HistoricWeatherData.Core.ViewModels
         public ICommand ClearDataCommand { get; }
         public ICommand NavigateToSettingsCommand { get; }
         public ICommand ExportWeatherDataCommand { get; }
+        public ICommand ExportChartCommand { get; }
+
+        private async Task ExportChartAsync(object? chart)
+        {
+            if (_chartExportService != null && chart != null)
+            {
+                await _chartExportService.ExportChartAsync(chart);
+            }
+        }
 
         private void UpdateDateRange()
         {

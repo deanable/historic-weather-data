@@ -14,9 +14,9 @@ namespace HistoricWeatherData.WinForms
         private Button saveButton = null!;
         private Label statusLabel = null!;
 
-        public SettingsForm(ISettingsService settingsService)
+        public SettingsForm(SettingsViewModel viewModel)
         {
-            _viewModel = SettingsViewModel.Create(settingsService).Result;
+            _viewModel = viewModel;
             InitializeComponents();
             BindControls();
         }
@@ -48,7 +48,7 @@ namespace HistoricWeatherData.WinForms
 
             // Save Button
             saveButton = new Button { Text = "Save", Dock = DockStyle.Fill };
-            saveButton.Click += async (s, e) => await _viewModel.SaveApiKeysCommand.ExecuteAsync(null);
+            saveButton.Click += (s, e) => _viewModel.SaveApiKeysCommand.Execute(null);
             mainLayout.Controls.Add(saveButton, 1, 2);
 
             // Status Label

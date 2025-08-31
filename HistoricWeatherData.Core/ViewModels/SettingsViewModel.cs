@@ -28,9 +28,9 @@ namespace HistoricWeatherData.Core.ViewModels
         {
             _settingsService = settingsService;
 
-            SaveSyncfusionKeyCommand = new RelayCommand(async () => await SaveSyncfusionKeyAsync());
-            SaveApiKeysCommand = new RelayCommand(async () => await SaveApiKeysAsync());
-            ClearAllCommand = new RelayCommand(async () => await ClearAllAsync());
+            SaveSyncfusionKeyCommand = new AsyncRelayCommand(SaveSyncfusionKeyAsync);
+            SaveApiKeysCommand = new AsyncRelayCommand(SaveApiKeysAsync);
+            ClearAllCommand = new AsyncRelayCommand(ClearAllAsync);
             GoBackCommand = new RelayCommand(GoBack);
         }
 

@@ -1,4 +1,5 @@
 using HistoricWeatherData.Core.Services.Interfaces;
+using CommunityToolkit.Maui;
 using HistoricWeatherData.Core.Services.Implementations;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
@@ -15,6 +16,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -27,6 +29,7 @@ public static class MauiProgram
 #endif
 
 		// Register services
+		builder.Services.AddSingleton<IChartExportService, Services.ChartExportService>();
 		builder.Services.AddSingleton<ILoggingService, CompositeLoggingService>();
 		builder.Services.AddSingleton<IReverseGeocodingService, ReverseGeocodingService>();
 		builder.Services.AddSingleton<ISettingsService, SettingsService>();

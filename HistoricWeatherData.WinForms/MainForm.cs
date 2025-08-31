@@ -8,12 +8,16 @@ using HistoricWeatherData.Core.Models;
 using HistoricWeatherData.Core.Services.Implementations;
 using HistoricWeatherData.Core.Services.Interfaces;
 using HistoricWeatherData.Core.ViewModels;
+using Syncfusion.WinForms.Chart;
+using Syncfusion.WinForms.Chart.Enums;
 
 namespace HistoricWeatherData.WinForms
 {
     public class MainForm : Form
     {
         private readonly MainViewModel _viewModel;
+        private readonly IServiceProvider _serviceProvider;
+        private SfCartesianChart weatherChart = null!;
         private DataGridView weatherDataGrid = null!;
         private TextBox locationTextBox = null!;
         private ComboBox timeRangeComboBox = null!;
@@ -31,16 +35,10 @@ namespace HistoricWeatherData.WinForms
         private ProgressBar loadingProgressBar = null!;
         private TableLayoutPanel mainPanel = null!;
 
-        public MainForm()
+        public MainForm(MainViewModel viewModel, IServiceProvider serviceProvider)
         {
-            // Initialize services and view model
-            var geocodingService = new ReverseGeocodingService();
-            var loggingService = new CompositeLoggingService();
-            var settingsService = new SettingsService();
-            var dataExportService = new DataExportService();
-            var weatherServiceFactory = new WeatherServiceFactory(loggingService, settingsService, geocodingService);
-            _viewModel = new MainViewModel(weatherServiceFactory, geocodingService, settingsService, dataExportService);
-
+            _viewModel = viewModel;
+            _serviceProvider = serviceProvider;
             _viewModel.PropertyChanged += ViewModel_PropertyChanged;
 
             InitializeComponents();
@@ -50,6 +48,7 @@ namespace HistoricWeatherData.WinForms
         private void InitializeComponents()
         {
             // Initialize controls
+            weatherChart = new SfCartesianChart();
             weatherDataGrid = new DataGridView();
             locationTextBox = new TextBox();
             timeRangeComboBox = new ComboBox();
@@ -73,11 +72,12 @@ namespace HistoricWeatherData.WinForms
 
             // Configure main panel
             mainPanel.Dock = DockStyle.Fill;
-            mainPanel.RowCount = 3;
+            mainPanel.RowCount = 4;
             mainPanel.ColumnCount = 1;
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 140));  // Controls panel - increased height
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));   // Data grid
-            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));  // Status bar
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 140));  // Controls panel
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));    // Chart
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50));    // Data grid
+            mainPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));   // Status bar
 
             this.Size = new Size(1400, 900); // Increased width for more controls
         }
@@ -90,14 +90,19 @@ namespace HistoricWeatherData.WinForms
             var controlsPanel = CreateControlsPanel();
             mainPanel.Controls.Add(controlsPanel, 0, 0);
 
+            // Setup chart
+            ConfigureChart(weatherChart);
+            weatherChart.DataSource = _viewModel.WeatherData;
+            mainPanel.Controls.Add(weatherChart, 0, 1);
+
             // Setup data grid
             ConfigureDataGrid(weatherDataGrid);
             weatherDataGrid.DataSource = new BindingSource { DataSource = _viewModel.WeatherData };
-            mainPanel.Controls.Add(weatherDataGrid, 0, 1);
+            mainPanel.Controls.Add(weatherDataGrid, 0, 2);
 
-            // Setup status panel (row 2)
+            // Setup status panel (row 3)
             var statusPanel = CreateStatusPanel();
-            mainPanel.Controls.Add(statusPanel, 0, 2);
+            mainPanel.Controls.Add(statusPanel, 0, 3);
         }
 
         private Panel CreateControlsPanel()
@@ -208,9 +213,18 @@ namespace HistoricWeatherData.WinForms
             };
             settingsButton.Click += (s, e) =>
             {
-                var settingsForm = new SettingsForm(new SettingsService());
+                using var scope = _serviceProvider.CreateScope();
+                var settingsForm = scope.ServiceProvider.GetRequiredService<SettingsForm>();
                 settingsForm.ShowDialog();
             };
+
+            var exportChartButton = new Button
+            {
+                Text = "Export Chart",
+                Location = new Point(820, 80),
+                Width = 100
+            };
+            exportChartButton.Click += (s, e) => ExportChart();
 
             // Initialize date picker visibility
             UpdateDatePickerVisibility();
@@ -227,10 +241,76 @@ namespace HistoricWeatherData.WinForms
                 // Row 3
                 exportFormatLabel, exportFormatComboBox, exportAveragesCheckBox,
                 // Buttons
-                loadDataButton, exportDataButton, clearDataButton, settingsButton
+                loadDataButton, exportDataButton, clearDataButton, settingsButton, exportChartButton
             });
 
             return panel;
+        }
+
+        private void ExportChart()
+        {
+            if (weatherChart.Series[0].Points.Count == 0)
+            {
+                MessageBox.Show("There is no chart data to export.", "Export Chart", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using var dialog = new SaveFileDialog
+            {
+                Title = "Save Chart as Image",
+                Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap Image|*.bmp",
+                FileName = "WeatherDataChart"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    weatherChart.SaveAsImage(dialog.FileName);
+                    MessageBox.Show($"Chart successfully saved to {dialog.FileName}", "Export Chart", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while saving the chart: {ex.Message}", "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void ConfigureChart(SfCartesianChart chart)
+        {
+            chart.Dock = DockStyle.Fill;
+            chart.Title.Text = "Weather Data Visualization";
+            chart.Legend.Visibility = Visibility.Visible;
+
+            var primaryAxis = new CategoryAxis { LabelRotationAngle = 45 };
+            chart.PrimaryAxis = primaryAxis;
+
+            var secondaryAxis = new NumericalAxis { Title = new ChartAxisTitle { Text = "Value" } };
+            chart.SecondaryAxis = secondaryAxis;
+
+            var tempMaxSeries = new LineSeries
+            {
+                XBindingPath = "Date",
+                YBindingPath = "TemperatureMax",
+                Label = "Max Temperature (°C)"
+            };
+            chart.Series.Add(tempMaxSeries);
+
+            var tempMinSeries = new LineSeries
+            {
+                XBindingPath = "Date",
+                YBindingPath = "TemperatureMin",
+                Label = "Min Temperature (°C)"
+            };
+            chart.Series.Add(tempMinSeries);
+
+            var precipSeries = new ColumnSeries
+            {
+                XBindingPath = "Date",
+                YBindingPath = "Precipitation",
+                Label = "Precipitation (mm)"
+            };
+            chart.Series.Add(precipSeries);
         }
 
         private void ConfigureDataGrid(DataGridView grid)
@@ -348,7 +428,8 @@ namespace HistoricWeatherData.WinForms
             }
             else if (e.PropertyName == "WeatherData")
             {
-                // Force refresh the data grid
+                // Refresh chart and data grid
+                weatherChart.DataSource = _viewModel.WeatherData;
                 if (weatherDataGrid.DataSource is BindingSource bs)
                 {
                     bs.ResetBindings(false);
