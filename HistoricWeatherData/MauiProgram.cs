@@ -27,14 +27,17 @@ public static class MauiProgram
 #endif
 
 		// Register services
+		builder.Services.AddSingleton<ILoggingService, CompositeLoggingService>();
 		builder.Services.AddSingleton<IReverseGeocodingService, ReverseGeocodingService>();
 		builder.Services.AddSingleton<ISettingsService, SettingsService>();
 		builder.Services.AddSingleton<IDataExportService, DataExportService>();
 		builder.Services.AddSingleton(Geolocation.Default);
 		builder.Services.AddSingleton(Geocoding.Default);
+		builder.Services.AddSingleton<IWeatherServiceFactory, WeatherServiceFactory>();
 
 		// Register weather providers
-		builder.Services.AddTransient<IWeatherDataService, OpenMeteoWeatherService>();
+		builder.Services.AddTransient<OpenMeteoWeatherService>();
+		builder.Services.AddTransient<VisualCrossingWeatherService>();
 
 		// Register ViewModels
 		builder.Services.AddTransient<HistoricWeatherData.Core.ViewModels.MainViewModel>();

@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HistoricWeatherData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5428c82bdc196dd1bb58f8230b0c4f9b207acd91")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c0d0dbe9c0c18b5f29c518dcf21f6428d7b1bd6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HistoricWeatherData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HistoricWeatherData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

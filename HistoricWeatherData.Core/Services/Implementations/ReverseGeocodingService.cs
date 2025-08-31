@@ -35,7 +35,9 @@ namespace HistoricWeatherData.Core.Services.Implementations
                 diagnostics.AddRequest();
 
                 // Using OpenStreetMap Nominatim API for reverse geocoding (free)
-                var url = $"https://nominatim.openstreetmap.org/reverse?format=json&lat={latitude}&lon={longitude}&zoom=10&addressdetails=1";
+                var formattedLatitude = latitude.ToString().Replace(',', '.');
+                var formattedLongitude = longitude.ToString().Replace(',', '.');
+                var url = $"https://nominatim.openstreetmap.org/reverse?format=json&lat={formattedLatitude}&lon={formattedLongitude}&zoom=10&addressdetails=1";
 
                 _loggingService.LogApiRequest("NominatimReverseGeocoding", url, new Dictionary<string, string>
                 {

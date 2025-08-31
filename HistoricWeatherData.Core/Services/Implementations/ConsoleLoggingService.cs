@@ -150,5 +150,9 @@ namespace HistoricWeatherData.Core.Services.Implementations
                 _errorLogs.Clear();
             }
         }
-    }
-}
+
+        public string GetLogDirectory() => string.Empty;
+
+        public string GetLogFilePath() => string.Empty;
+
+        public string GetErrorLogFilePath() => string.Empty;

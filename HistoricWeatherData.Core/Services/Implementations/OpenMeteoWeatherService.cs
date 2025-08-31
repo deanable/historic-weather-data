@@ -17,6 +17,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
         public OpenMeteoWeatherService(IReverseGeocodingService geocodingService)
         {
             _httpClient = new HttpClient();
+            _httpClient.Timeout = TimeSpan.FromSeconds(300);
             _geocodingService = geocodingService;
             _loggingService = new CompositeLoggingService(); // File + Console logging
         }
@@ -24,6 +25,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
         public OpenMeteoWeatherService(IReverseGeocodingService geocodingService, ILoggingService loggingService)
         {
             _httpClient = new HttpClient();
+            _httpClient.Timeout = TimeSpan.FromSeconds(300);
             _geocodingService = geocodingService;
             _loggingService = loggingService;
         }

@@ -35,10 +35,11 @@ namespace HistoricWeatherData.WinForms
         {
             // Initialize services and view model
             var geocodingService = new ReverseGeocodingService();
-            var weatherService = new OpenMeteoWeatherService(geocodingService);
+            var loggingService = new CompositeLoggingService();
             var settingsService = new SettingsService();
             var dataExportService = new DataExportService();
-            _viewModel = new MainViewModel(weatherService, geocodingService, settingsService, dataExportService);
+            var weatherServiceFactory = new WeatherServiceFactory(loggingService, settingsService, geocodingService);
+            _viewModel = new MainViewModel(weatherServiceFactory, geocodingService, settingsService, dataExportService);
 
             _viewModel.PropertyChanged += ViewModel_PropertyChanged;
 

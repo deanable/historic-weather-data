@@ -331,11 +331,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             _fileLogger.LogApiResponse(serviceName, statusCode, responseContent, duration, parameters);
         }
 
-        public void LogApiError(string serviceName, string url, Exception ex, TimeSpan duration)
-        {
-            _consoleLogger.LogApiError(serviceName, url, ex, duration);
-            _fileLogger.LogApiError(serviceName, url, ex, duration);
-        }
+        
 
         public IReadOnlyList<ApiErrorLog> GetErrorLogs()
         {

@@ -8,7 +8,7 @@ namespace HistoricWeatherData.Core.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private readonly IWeatherDataService _weatherService;
+        private readonly IWeatherServiceFactory _weatherServiceFactory;
         private readonly IReverseGeocodingService _geocodingService;
         private readonly ISettingsService _settingsService;
         private readonly IDataExportService _dataExportService;
@@ -28,9 +28,9 @@ namespace HistoricWeatherData.Core.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel(IWeatherDataService weatherService, IReverseGeocodingService geocodingService, ISettingsService settingsService, IDataExportService dataExportService)
+        public MainViewModel(IWeatherServiceFactory weatherServiceFactory, IReverseGeocodingService geocodingService, ISettingsService settingsService, IDataExportService dataExportService)
         {
-            _weatherService = weatherService;
+            _weatherServiceFactory = weatherServiceFactory;
             _geocodingService = geocodingService;
             _settingsService = settingsService;
             _dataExportService = dataExportService;
@@ -44,6 +44,7 @@ namespace HistoricWeatherData.Core.ViewModels
             WeatherProviders = new ObservableCollection<string>
             {
                 "OpenMeteo",
+                "Visual Crossing",
                 "Dummy Provider"
             };
             SelectedWeatherProvider = WeatherProviders.First();
@@ -302,7 +303,8 @@ namespace HistoricWeatherData.Core.ViewModels
                     ProviderName = SelectedWeatherProvider ?? string.Empty
                 };
 
-                var response = await _weatherService.GetHistoricalWeatherDataAsync(parameters);
+                var weatherService = _weatherServiceFactory.GetService(parameters.ProviderName);
+                var response = await weatherService.GetHistoricalWeatherDataAsync(parameters);
 
                 if (response.IsSuccess)
                 {
