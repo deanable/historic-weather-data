@@ -115,3 +115,15 @@
 [2025-08-29 15:09:36] [DEBUG] [API RESPONSE] OpenMeteo-Year2025 - Status: 200 (OK) | Duration: 186ms | Content Length: 807 chars
 [2025-08-29 15:09:36] [WARNING] Year 2025: No data returned
 [2025-08-29 15:09:36] [INFO] Completed weather data request: 15 total records from 1 years, 1 failed years: 2025
+=== Historic Weather Data Log Started: 2025/08/29 19:31:14 ===
+=== Historic Weather Data Log Started: 2025/08/29 19:31:14 ===
+[2025-08-29 19:32:26] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-08-29 19:32:26] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40,7128&lon=-74,006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-08-29 19:32:28] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 400 (Bad Request) | Duration: 1407ms | Content Length: 68 chars
+[2025-08-29 19:32:28] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-29 19:32:28] [INFO] Fetching weather data for years 2024-2025, date range 2025-08-10 to 2025-08-11
+[2025-08-29 19:32:28] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-08-10&end_date=2024-08-11&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-08-10, end_date=2024-08-11, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-08-29 19:34:08] [WARNING] Year 2024: No data returned
+[2025-08-29 19:34:08] [DEBUG] [API REQUEST] OpenMeteo-Year2025 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2025-08-10&end_date=2025-08-11&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2025-08-10, end_date=2025-08-11, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-08-29 19:35:48] [WARNING] Year 2025: No data returned
+[2025-08-29 19:35:48] [INFO] Completed weather data request: 0 total records from 0 years, 2 failed years: 2024, 2025

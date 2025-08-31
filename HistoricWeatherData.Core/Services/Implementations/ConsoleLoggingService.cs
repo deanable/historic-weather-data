@@ -28,7 +28,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             }
         }
 
-        public void LogError(string message, Exception ex = null)
+        public void LogError(string message, Exception? ex = null)
         {
             lock (_logLock)
             {
@@ -83,7 +83,7 @@ namespace HistoricWeatherData.Core.Services.Implementations
             }
         }
 
-        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration)
+        public void LogApiResponse(string serviceName, int statusCode, string responseContent, TimeSpan duration, Dictionary<string, string>? parameters = null)
         {
             lock (_logLock)
             {

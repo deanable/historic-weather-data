@@ -15,6 +15,7 @@
           "Microsoft.Maui.Controls.Compatibility": "8.0.100",
           "Syncfusion.Maui.Charts": "26.1.35",
           "Syncfusion.Maui.Core": "26.1.35",
+          "Syncfusion.XlsIO.NET": "26.1.35",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.57"
         },
         "runtime": {
@@ -448,6 +449,14 @@
           }
         }
       },
+      "Syncfusion.Compression.NET/26.1.35": {
+        "runtime": {
+          "lib/net8.0/Syncfusion.Compression.NET.dll": {
+            "assemblyVersion": "26.1.35.0",
+            "fileVersion": "26.1.35.0"
+          }
+        }
+      },
       "Syncfusion.Licensing/26.1.35": {
         "runtime": {
           "lib/net8.0/Syncfusion.Licensing.dll": {
@@ -478,7 +487,22 @@
           }
         }
       },
+      "Syncfusion.XlsIO.NET/26.1.35": {
+        "dependencies": {
+          "Syncfusion.Compression.NET": "26.1.35",
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.XlsIO.NET.dll": {
+            "assemblyVersion": "26.1.35.0",
+            "fileVersion": "26.1.35.0"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
+        "dependencies": {
+          "Syncfusion.XlsIO.NET": "26.1.35"
+        },
         "runtime": {
           "HistoricWeatherData.Core.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -660,6 +684,13 @@
       "path": "microsoft.windowsappsdk/1.5.240802000",
       "hashPath": "microsoft.windowsappsdk.1.5.240802000.nupkg.sha512"
     },
+    "Syncfusion.Compression.NET/26.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-15aZwfkvwySU8E5HTNm4KLQNsjDRSelzAEiLxG4uSpBGXse2S25hMXuHZdX3geE+5aqFi2gnDDO8rruaNAAQRw==",
+      "path": "syncfusion.compression.net/26.1.35",
+      "hashPath": "syncfusion.compression.net.26.1.35.nupkg.sha512"
+    },
     "Syncfusion.Licensing/26.1.35": {
       "type": "package",
       "serviceable": true,
@@ -680,6 +711,13 @@
       "sha512": "sha512-3fu1xLMpiLcj7I766p3mRdVsoH41Y0wQXsQ1MKye8hUF5wnuB3Q3xC4qzT6IapTWuL7F4qWxhx7pie9xb94Y7Q==",
       "path": "syncfusion.maui.core/26.1.35",
       "hashPath": "syncfusion.maui.core.26.1.35.nupkg.sha512"
+    },
+    "Syncfusion.XlsIO.NET/26.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FFAU6M3EdBbUuTfIIcyVKvZWL5wiHAC34DzeyAGgxsfwXpdOpn55kX27q7IjWP2SK+kw1fWf+1dPrZIhN1ELqw==",
+      "path": "syncfusion.xlsio.net/26.1.35",
+      "hashPath": "syncfusion.xlsio.net.26.1.35.nupkg.sha512"
     },
     "HistoricWeatherData.Core/1.0.0": {
       "type": "project",

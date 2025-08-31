@@ -157,3 +157,63 @@ Stack Trace:    at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state
    at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
    at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in C:\Users\User\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 179
 [2025-08-29 15:09:36] [WARNING] Year 2025: No data returned
+=== Historic Weather Data Error Log Started: 2025/08/29 19:31:14 ===
+=== Historic Weather Data Error Log Started: 2025/08/29 19:31:14 ===
+[2025-08-29 19:32:28] [ERROR] NominatimReverseGeocoding API Error Response:
+{"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-29 19:32:28] [ERROR] Nominatim API returned BadRequest: {"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-29 19:32:28] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-29 19:34:08] [ERROR] Unexpected error processing year 2024
+Exception: TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+Stack Trace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in C:\Users\Dean Kruger\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 161
+[2025-08-29 19:34:08] [WARNING] Year 2024: No data returned
+[2025-08-29 19:35:48] [ERROR] Unexpected error processing year 2025
+Exception: TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+Stack Trace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in C:\Users\Dean Kruger\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 161
+[2025-08-29 19:35:48] [WARNING] Year 2025: No data returned
+=== Historic Weather Data Error Log Started: 2025/08/31 02:16:25 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 02:16:25 ===
+[2025-08-31 02:16:50] [ERROR] NominatimReverseGeocoding API Error Response:
+{"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 02:16:50] [ERROR] Nominatim API returned BadRequest: {"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 02:16:50] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-31 02:18:30] [ERROR] Unexpected error processing year 2024
+Exception: TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+Stack Trace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in c:\Users\Dean Kruger\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 161
+[2025-08-31 02:18:30] [WARNING] Year 2024: No data returned
+[2025-08-31 02:20:10] [ERROR] Unexpected error processing year 2025
+Exception: TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+Stack Trace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in c:\Users\Dean Kruger\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 161
+[2025-08-31 02:20:10] [WARNING] Year 2025: No data returned
+[2025-08-31 02:20:28] [ERROR] NominatimReverseGeocoding API Error Response:
+{"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 02:20:28] [ERROR] Nominatim API returned BadRequest: {"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 02:20:28] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+=== Historic Weather Data Error Log Started: 2025/08/31 02:48:57 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 02:48:57 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 02:56:15 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 02:56:15 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:02:57 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:02:57 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:19:26 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:19:26 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:24:04 ===
+=== Historic Weather Data Error Log Started: 2025/08/31 03:24:04 ===
+[2025-08-31 03:24:54] [ERROR] NominatimReverseGeocoding API Error Response:
+{"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 03:24:54] [ERROR] Nominatim API returned BadRequest: {"error":{"code":400,"message":"Parameter 'lon' must be a number."}}
+[2025-08-31 03:24:54] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-31 03:26:34] [ERROR] Unexpected error processing year 2024
+Exception: TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+Stack Trace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at HistoricWeatherData.Core.Services.Implementations.OpenMeteoWeatherService.GetWeatherDataForYearAsync(Double latitude, Double longitude, DateTime startDate, DateTime endDate, Int32 year, LocationData locationData) in C:\Users\Dean Kruger\source\repos\deanable\Historic Weather Data\HistoricWeatherData.Core\Services\Implementations\OpenMeteoWeatherService.cs:line 161
+[2025-08-31 03:26:34] [WARNING] Year 2024: No data returned

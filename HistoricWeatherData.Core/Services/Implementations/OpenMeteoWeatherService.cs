@@ -191,9 +191,15 @@ namespace HistoricWeatherData.Core.Services.Implementations
                 {
                     try
                     {
+                        var date = DateTime.Parse(result.daily.time[i]);
+                        if (date.Month == 2 && date.Day == 29)
+                        {
+                            continue; // Ignore leap days
+                        }
+
                         weatherData.Add(new WeatherData
                         {
-                            Date = DateTime.Parse(result.daily.time[i]),
+                            Date = date,
                             TemperatureMin = result.daily.temperature_2m_min[i],
                             TemperatureMax = result.daily.temperature_2m_max[i],
                             Precipitation = result.daily.precipitation_sum[i],

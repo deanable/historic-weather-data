@@ -1,0 +1,36 @@
+=== Historic Weather Data Log Started: 2025/08/31 02:16:25 ===
+=== Historic Weather Data Log Started: 2025/08/31 02:16:25 ===
+[2025-08-31 02:16:49] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-08-31 02:16:49] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40,7128&lon=-74,006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-08-31 02:16:50] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 400 (Bad Request) | Duration: 807ms | Content Length: 68 chars
+[2025-08-31 02:16:50] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-31 02:16:50] [INFO] Fetching weather data for years 2024-2025, date range 2025-07-27 to 2025-07-28
+[2025-08-31 02:16:50] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-07-27&end_date=2024-07-28&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-07-27, end_date=2024-07-28, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-08-31 02:18:30] [WARNING] Year 2024: No data returned
+[2025-08-31 02:18:30] [DEBUG] [API REQUEST] OpenMeteo-Year2025 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2025-07-27&end_date=2025-07-28&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2025-07-27, end_date=2025-07-28, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-08-31 02:20:10] [WARNING] Year 2025: No data returned
+[2025-08-31 02:20:10] [INFO] Completed weather data request: 0 total records from 0 years, 2 failed years: 2024, 2025
+[2025-08-31 02:20:28] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-08-31 02:20:28] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40,7128&lon=-74,006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-08-31 02:20:28] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 400 (Bad Request) | Duration: 497ms | Content Length: 68 chars
+[2025-08-31 02:20:28] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-31 02:20:28] [INFO] Fetching weather data for years 2024-2025, date range 2025-08-01 to 2025-08-31
+[2025-08-31 02:20:28] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-08-01&end_date=2024-08-31&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-08-01, end_date=2024-08-31, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/08/31 02:48:57 ===
+=== Historic Weather Data Log Started: 2025/08/31 02:48:57 ===
+=== Historic Weather Data Log Started: 2025/08/31 02:56:15 ===
+=== Historic Weather Data Log Started: 2025/08/31 02:56:15 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:02:57 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:02:57 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:19:26 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:19:26 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:24:04 ===
+=== Historic Weather Data Log Started: 2025/08/31 03:24:04 ===
+[2025-08-31 03:24:53] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-08-31 03:24:53] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40,7128&lon=-74,006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-08-31 03:24:54] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 400 (Bad Request) | Duration: 695ms | Content Length: 68 chars
+[2025-08-31 03:24:54] [WARNING] Using fallback location data for 40,7128, -74,0060. Reason: Nominatim API error
+[2025-08-31 03:24:54] [INFO] Fetching weather data for years 2024-2025, date range 2025-01-01 to 2025-01-02
+[2025-08-31 03:24:54] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-01-01&end_date=2024-01-02&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-01-01, end_date=2024-01-02, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-08-31 03:26:34] [WARNING] Year 2024: No data returned
+[2025-08-31 03:26:34] [DEBUG] [API REQUEST] OpenMeteo-Year2025 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2025-01-01&end_date=2025-01-02&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2025-01-01, end_date=2025-01-02, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "r6wSUVG3Ts8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dean Kruger\\source\\repos\\deanable\\Historic Weather Data\\HistoricWeatherData.WinForms\\HistoricWeatherData.WinForms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dean Kruger\\.nuget\\packages\\syncfusion.compression.net\\26.1.35\\syncfusion.compression.net.26.1.35.nupkg.sha512",
+    "C:\\Users\\Dean Kruger\\.nuget\\packages\\syncfusion.licensing\\26.1.35\\syncfusion.licensing.26.1.35.nupkg.sha512",
+    "C:\\Users\\Dean Kruger\\.nuget\\packages\\syncfusion.xlsio.net\\26.1.35\\syncfusion.xlsio.net.26.1.35.nupkg.sha512"
+  ],
+  "logs": []
+}

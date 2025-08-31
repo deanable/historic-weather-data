@@ -14,7 +14,38 @@
           "HistoricWeatherData.WinForms.dll": {}
         }
       },
+      "Syncfusion.Compression.NET/26.1.35": {
+        "runtime": {
+          "lib/net8.0/Syncfusion.Compression.NET.dll": {
+            "assemblyVersion": "26.1.35.0",
+            "fileVersion": "26.1.35.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/26.1.35": {
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "26.1.35.0",
+            "fileVersion": "26.1.35.0"
+          }
+        }
+      },
+      "Syncfusion.XlsIO.NET/26.1.35": {
+        "dependencies": {
+          "Syncfusion.Compression.NET": "26.1.35",
+          "Syncfusion.Licensing": "26.1.35"
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.XlsIO.NET.dll": {
+            "assemblyVersion": "26.1.35.0",
+            "fileVersion": "26.1.35.0"
+          }
+        }
+      },
       "HistoricWeatherData.Core/1.0.0": {
+        "dependencies": {
+          "Syncfusion.XlsIO.NET": "26.1.35"
+        },
         "runtime": {
           "HistoricWeatherData.Core.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -29,6 +60,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Syncfusion.Compression.NET/26.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-15aZwfkvwySU8E5HTNm4KLQNsjDRSelzAEiLxG4uSpBGXse2S25hMXuHZdX3geE+5aqFi2gnDDO8rruaNAAQRw==",
+      "path": "syncfusion.compression.net/26.1.35",
+      "hashPath": "syncfusion.compression.net.26.1.35.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/26.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DPMS7ODbzaS+S2//uOMW8XL/08AEIMz/TEb113gaXdwga328ozz+4wiQGZBJzjLGglyO1vV+GTUigquDGHWcFg==",
+      "path": "syncfusion.licensing/26.1.35",
+      "hashPath": "syncfusion.licensing.26.1.35.nupkg.sha512"
+    },
+    "Syncfusion.XlsIO.NET/26.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FFAU6M3EdBbUuTfIIcyVKvZWL5wiHAC34DzeyAGgxsfwXpdOpn55kX27q7IjWP2SK+kw1fWf+1dPrZIhN1ELqw==",
+      "path": "syncfusion.xlsio.net/26.1.35",
+      "hashPath": "syncfusion.xlsio.net.26.1.35.nupkg.sha512"
     },
     "HistoricWeatherData.Core/1.0.0": {
       "type": "project",

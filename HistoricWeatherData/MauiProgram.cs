@@ -9,6 +9,9 @@ public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
+		// Add Syncfusion license
+		Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXddcHZVRWVfUkx3W0tWYEk=");
+
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
@@ -26,6 +29,7 @@ public static class MauiProgram
 		// Register services
 		builder.Services.AddSingleton<IReverseGeocodingService, ReverseGeocodingService>();
 		builder.Services.AddSingleton<ISettingsService, SettingsService>();
+		builder.Services.AddSingleton<IDataExportService, DataExportService>();
 		builder.Services.AddSingleton(Geolocation.Default);
 		builder.Services.AddSingleton(Geocoding.Default);
 
