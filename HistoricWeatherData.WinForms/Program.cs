@@ -4,6 +4,7 @@ using HistoricWeatherData.Core.Services.Interfaces;
 using HistoricWeatherData.Core.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Syncfusion.Licensing;
 using System;
 using System.Windows.Forms;
 
@@ -17,12 +18,15 @@ static class Program
     [STAThread]
     static void Main()
     {
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NCaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXZecXVTR2RYVkJ3WUVWYU8=");
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
         ApplicationConfiguration.Initialize();
 
         var host = CreateHostBuilder().Build();
         ServiceProvider = host.Services;
 
-        Application.Run(ServiceProvider.GetRequiredService<MainForm>());
+        Application.Run(Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<MainForm>(ServiceProvider));
     }
 
     public static IServiceProvider? ServiceProvider { get; private set; }
@@ -42,7 +46,11 @@ static class Program
                 // Register ViewModels
                 services.AddTransient<MainViewModel>();
                 services.AddTransient<SettingsViewModel>(sp =>
-                    SettingsViewModel.Create(sp.GetRequiredService<ISettingsService>()).Result);
+                    SettingsViewModel.Create(Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ISettingsService>(sp)).Result);
+
+                // Register Forms
+                services.AddTransient<MainForm>();
+                services.AddTransient<SettingsForm>();
 
                 // Register Forms
                 services.AddTransient<MainForm>();

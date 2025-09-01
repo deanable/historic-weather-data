@@ -3,13 +3,14 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Win32;
 using System.Windows.Forms;
 using HistoricWeatherData.Core.Models;
 using HistoricWeatherData.Core.Services.Implementations;
 using HistoricWeatherData.Core.Services.Interfaces;
 using HistoricWeatherData.Core.ViewModels;
-using Syncfusion.WinForms.Chart;
-using Syncfusion.WinForms.Chart.Enums;
+using Syncfusion.Windows.Forms.Chart;
 
 namespace HistoricWeatherData.WinForms
 {
@@ -17,9 +18,10 @@ namespace HistoricWeatherData.WinForms
     {
         private readonly MainViewModel _viewModel;
         private readonly IServiceProvider _serviceProvider;
-        private SfCartesianChart weatherChart = null!;
+        private ChartControl weatherChart = null!;
         private DataGridView weatherDataGrid = null!;
         private TextBox locationTextBox = null!;
+        private TextBox apiKeyTextBox = null!;
         private ComboBox timeRangeComboBox = null!;
         private ComboBox weatherProviderComboBox = null!;
         private ComboBox yearsComboBox = null!;
@@ -43,14 +45,16 @@ namespace HistoricWeatherData.WinForms
 
             InitializeComponents();
             SetupLayout();
+            LoadSettings();
         }
 
         private void InitializeComponents()
         {
             // Initialize controls
-            weatherChart = new SfCartesianChart();
+            weatherChart = new ChartControl();
             weatherDataGrid = new DataGridView();
             locationTextBox = new TextBox();
+            apiKeyTextBox = new TextBox();
             timeRangeComboBox = new ComboBox();
             weatherProviderComboBox = new ComboBox();
             yearsComboBox = new ComboBox();
@@ -92,7 +96,6 @@ namespace HistoricWeatherData.WinForms
 
             // Setup chart
             ConfigureChart(weatherChart);
-            weatherChart.DataSource = _viewModel.WeatherData;
             mainPanel.Controls.Add(weatherChart, 0, 1);
 
             // Setup data grid
@@ -118,9 +121,10 @@ namespace HistoricWeatherData.WinForms
             {
                 _viewModel.LocationName = locationTextBox.Text;
                 ValidateLoadButton();
+                SaveSettings();
             };
 
-            var providerLabel = new Label { Text = "Weather Provider:", Location = new Point(300, 10), AutoSize = true };
+                        var providerLabel = new Label { Text = "Weather Provider:", Location = new Point(300, 10), AutoSize = true };
             weatherProviderComboBox.DataSource = _viewModel.WeatherProviders;
             weatherProviderComboBox.SelectedItem = _viewModel.SelectedWeatherProvider;
             weatherProviderComboBox.Location = new Point(300, 30);
@@ -130,11 +134,43 @@ namespace HistoricWeatherData.WinForms
                 _viewModel.SelectedWeatherProvider = weatherProviderComboBox.SelectedItem?.ToString();
             };
 
-            var yearsLabel = new Label { Text = "Years:", Location = new Point(500, 10), AutoSize = true };
+            var apiKeyLabel = new Label { Text = "API Key:", Location = new Point(300, 55), AutoSize = true };
+            apiKeyTextBox.Location = new Point(300, 75);
+            apiKeyTextBox.Width = 280;
+            apiKeyTextBox.TextChanged += (s, e) => SaveSettings();
+            apiKeyTextBox.UseSystemPasswordChar = true; // Hide API key
+
+            var yearsLabel = new Label { Text = "Years:", Location = new Point(600, 10), AutoSize = true };
             yearsComboBox.DataSource = _viewModel.Years;
             yearsComboBox.SelectedItem = _viewModel.SelectedYear;
-            yearsComboBox.Location = new Point(500, 30);
+            yearsComboBox.Location = new Point(600, 30);
             yearsComboBox.Width = 60;
+            yearsComboBox.SelectedIndexChanged += (s, e) => SaveSettings();
+
+            yearsComboBox.DataSource = _viewModel.Years;
+
+            yearsComboBox.DataSource = _viewModel.Years;
+
+            yearsComboBox.DataSource = _viewModel.Years;
+            yearsComboBox.SelectedItem = _viewModel.SelectedYear;
+            yearsComboBox.Location = new Point(600, 30);
+            yearsComboBox.Width = 60;
+            yearsComboBox.SelectedIndexChanged += (s, e) => SaveSettings();
+
+            yearsComboBox.DataSource = _viewModel.Years;
+
+            yearsComboBox.DataSource = _viewModel.Years;
+            yearsComboBox.SelectedItem = _viewModel.SelectedYear;
+            yearsComboBox.Location = new Point(600, 30);
+            yearsComboBox.Width = 60;
+
+            yearsComboBox.DataSource = _viewModel.Years;
+            yearsComboBox.SelectedItem = _viewModel.SelectedYear;
+            yearsComboBox.Location = new Point(600, 30);
+            yearsComboBox.Width = 60;
+            yearsComboBox.SelectedIndexChanged += (s, e) => SaveSettings();
+
+            yearsComboBox.DataSource = _viewModel.Years;
 
             // Row 2: Time Range and Dates
             var timeRangeLabel = new Label { Text = "Time Range:", Location = new Point(10, 60), AutoSize = true };
@@ -205,18 +241,7 @@ namespace HistoricWeatherData.WinForms
             clearDataButton.Width = 100;
             clearDataButton.Click += (s, e) => _viewModel.ClearDataCommand.Execute(null);
 
-            var settingsButton = new Button
-            {
-                Text = "Settings",
-                Location = new Point(940, 30),
-                Width = 100
-            };
-            settingsButton.Click += (s, e) =>
-            {
-                using var scope = _serviceProvider.CreateScope();
-                var settingsForm = scope.ServiceProvider.GetRequiredService<SettingsForm>();
-                settingsForm.ShowDialog();
-            };
+            
 
             var exportChartButton = new Button
             {
@@ -233,6 +258,7 @@ namespace HistoricWeatherData.WinForms
                 // Row 1
                 locationLabel, locationTextBox,
                 providerLabel, weatherProviderComboBox,
+                apiKeyLabel, apiKeyTextBox,
                 yearsLabel, yearsComboBox,
                 // Row 2
                 timeRangeLabel, timeRangeComboBox,
@@ -241,7 +267,7 @@ namespace HistoricWeatherData.WinForms
                 // Row 3
                 exportFormatLabel, exportFormatComboBox, exportAveragesCheckBox,
                 // Buttons
-                loadDataButton, exportDataButton, clearDataButton, settingsButton, exportChartButton
+                loadDataButton, exportDataButton, clearDataButton, exportChartButton
             });
 
             return panel;
@@ -266,7 +292,7 @@ namespace HistoricWeatherData.WinForms
             {
                 try
                 {
-                    weatherChart.SaveAsImage(dialog.FileName);
+                    weatherChart.SaveImage(dialog.FileName);
                     MessageBox.Show($"Chart successfully saved to {dialog.FileName}", "Export Chart", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -276,40 +302,38 @@ namespace HistoricWeatherData.WinForms
             }
         }
 
-        private void ConfigureChart(SfCartesianChart chart)
+        private void ConfigureChart(ChartControl chart)
         {
             chart.Dock = DockStyle.Fill;
-            chart.Title.Text = "Weather Data Visualization";
-            chart.Legend.Visibility = Visibility.Visible;
+            chart.Titles.Add(new ChartTitle { Text = "Weather Data Visualization" });
+            chart.Legend.Visible = true;
+            chart.Legend.Position = Syncfusion.Windows.Forms.Chart.ChartDock.Top;
+            chart.ShowToolTips = true;
 
-            var primaryAxis = new CategoryAxis { LabelRotationAngle = 45 };
-            chart.PrimaryAxis = primaryAxis;
+            chart.PrimaryXAxis.ValueType = ChartValueType.Category;
+            chart.PrimaryXAxis.Title = "Date";
 
-            var secondaryAxis = new NumericalAxis { Title = new ChartAxisTitle { Text = "Value" } };
-            chart.SecondaryAxis = secondaryAxis;
+            chart.PrimaryYAxis.Title = "Value";
 
-            var tempMaxSeries = new LineSeries
-            {
-                XBindingPath = "Date",
-                YBindingPath = "TemperatureMax",
-                Label = "Max Temperature (°C)"
-            };
+            var tempMaxSeries = new ChartSeries("Max Temperature (°C)", ChartSeriesType.Line);
+            var tempMaxModel = new CategoryAxisDataBindModel(_viewModel.WeatherData);
+            tempMaxModel.CategoryName = "Date";
+            tempMaxModel.YNames = new string[] { "TemperatureMax" };
+            tempMaxSeries.CategoryModel = tempMaxModel;
             chart.Series.Add(tempMaxSeries);
 
-            var tempMinSeries = new LineSeries
-            {
-                XBindingPath = "Date",
-                YBindingPath = "TemperatureMin",
-                Label = "Min Temperature (°C)"
-            };
+            var tempMinSeries = new ChartSeries("Min Temperature (°C)", ChartSeriesType.Line);
+            var tempMinModel = new CategoryAxisDataBindModel(_viewModel.WeatherData);
+            tempMinModel.CategoryName = "Date";
+            tempMinModel.YNames = new string[] { "TemperatureMin" };
+            tempMinSeries.CategoryModel = tempMinModel;
             chart.Series.Add(tempMinSeries);
 
-            var precipSeries = new ColumnSeries
-            {
-                XBindingPath = "Date",
-                YBindingPath = "Precipitation",
-                Label = "Precipitation (mm)"
-            };
+            var precipSeries = new ChartSeries("Precipitation (mm)", ChartSeriesType.Column);
+            var precipModel = new CategoryAxisDataBindModel(_viewModel.WeatherData);
+            precipModel.CategoryName = "Date";
+            precipModel.YNames = new string[] { "Precipitation" };
+            precipSeries.CategoryModel = precipModel;
             chart.Series.Add(precipSeries);
         }
 
@@ -429,7 +453,7 @@ namespace HistoricWeatherData.WinForms
             else if (e.PropertyName == "WeatherData")
             {
                 // Refresh chart and data grid
-                weatherChart.DataSource = _viewModel.WeatherData;
+                weatherChart.Refresh();
                 if (weatherDataGrid.DataSource is BindingSource bs)
                 {
                     bs.ResetBindings(false);
@@ -444,6 +468,104 @@ namespace HistoricWeatherData.WinForms
             else if (e.PropertyName == nameof(MainViewModel.SelectedTimeRange))
             {
                 UpdateDatePickerVisibility();
+            }
+        }
+
+        private void SaveSettings()
+        {
+            try
+            {
+                using var key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\HistoricWeatherData");
+                if (key != null)
+                {
+                    key.SetValue("Location", locationTextBox.Text);
+                    key.SetValue("WeatherProvider", weatherProviderComboBox.SelectedItem?.ToString() ?? "");
+                    key.SetValue("Years", yearsComboBox.SelectedItem?.ToString() ?? "");
+                    key.SetValue("TimeRange", timeRangeComboBox.SelectedItem?.ToString() ?? "");
+                    key.SetValue("StartDate", startDatePicker.Value.ToString("yyyy-MM-dd"));
+                    key.SetValue("EndDate", endDatePicker.Value.ToString("yyyy-MM-dd"));
+                    key.SetValue("ExportFormat", exportFormatComboBox.SelectedItem?.ToString() ?? "");
+                    key.SetValue("ExportAverages", exportAveragesCheckBox.Checked);
+                    key.SetValue("ApiKey", apiKeyTextBox.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ignore registry errors
+                Console.WriteLine($"Error saving settings: {ex.Message}");
+            }
+        }
+
+        private void LoadSettings()
+        {
+            try
+            {
+                using var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\HistoricWeatherData");
+                if (key != null)
+                {
+                    locationTextBox.Text = key.GetValue("Location") as string ?? "";
+                    _viewModel.LocationName = locationTextBox.Text;
+
+                    var provider = key.GetValue("WeatherProvider") as string;
+                    if (provider != null && _viewModel.WeatherProviders.Contains(provider))
+                    {
+                        weatherProviderComboBox.SelectedItem = provider;
+                        _viewModel.SelectedWeatherProvider = provider;
+                    }
+
+                    var yearsStr = key.GetValue("Years") as string;
+                    if (int.TryParse(yearsStr, out var yearsVal) && _viewModel.Years.Contains(yearsVal))
+                    {
+                        yearsComboBox.SelectedItem = yearsVal;
+                        _viewModel.SelectedYear = yearsVal;
+                    }
+
+                    var timeRange = key.GetValue("TimeRange") as string;
+                    if (timeRange != null && _viewModel.TimeRanges.Contains(timeRange))
+                    {
+                        timeRangeComboBox.SelectedItem = timeRange;
+                        _viewModel.SelectedTimeRange = timeRange;
+                    }
+
+                    var startDateStr = key.GetValue("StartDate") as string;
+                    if (DateTime.TryParse(startDateStr, out var startDate))
+                    {
+                        startDatePicker.Value = startDate;
+                        _viewModel.StartDate = startDate;
+                    }
+
+                    var endDateStr = key.GetValue("EndDate") as string;
+                    if (DateTime.TryParse(endDateStr, out var endDate))
+                    {
+                        endDatePicker.Value = endDate;
+                        _viewModel.EndDate = endDate;
+                    }
+
+                    var exportFormat = key.GetValue("ExportFormat") as string;
+                    if (exportFormat != null && _viewModel.ExportFormats.Contains(exportFormat))
+                    {
+                        exportFormatComboBox.SelectedItem = exportFormat;
+                        _viewModel.SelectedExportFormat = exportFormat;
+                    }
+
+                    var exportAverages = key.GetValue("ExportAverages") as bool?;
+                    if (exportAverages.HasValue)
+                    {
+                        exportAveragesCheckBox.Checked = exportAverages.Value;
+                        _viewModel.ExportAverages = exportAverages.Value;
+                    }
+
+                    var apiKey = key.GetValue("ApiKey") as string;
+                    if (apiKey != null)
+                    {
+                        apiKeyTextBox.Text = apiKey;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ignore registry errors
+                Console.WriteLine($"Error loading settings: {ex.Message}");
             }
         }
     }
