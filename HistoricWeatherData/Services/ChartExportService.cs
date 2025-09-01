@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Storage;
 using HistoricWeatherData.Core.Services.Interfaces;
 using Syncfusion.Maui.Charts;
+using Syncfusion.Maui.Core;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace HistoricWeatherData.Services
                 return;
             }
 
-            using var stream = await cartesianChart.GetStreamAsync();
+            using var stream = await cartesianChart.GetStreamAsync(ImageFileFormat.Png);
             var fileSaverResult = await FileSaver.Default.SaveAsync("WeatherDataChart.png", stream, CancellationToken.None);
 
             if (fileSaverResult.IsSuccessful)

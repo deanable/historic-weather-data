@@ -315,6 +315,14 @@ namespace HistoricWeatherData.Core.ViewModels
                     YearsBack = SelectedYear,
                     ProviderName = SelectedWeatherProvider ?? string.Empty
                 };
+                // If end date is in the future, fetch historical weather for that period
+                if ((EndDate.HasValue && EndDate.Value > DateTime.Now) ||
+                    (!EndDate.HasValue && StartDate > DateTime.Now))
+                {
+                    parameters.StartDate = parameters.StartDate.AddYears(-parameters.YearsBack);
+                    if (parameters.EndDate.HasValue)
+                        parameters.EndDate = parameters.EndDate.Value.AddYears(-parameters.YearsBack);
+                }
 
                 var weatherService = _weatherServiceFactory.GetService(parameters.ProviderName);
                 var response = await weatherService.GetHistoricalWeatherDataAsync(parameters);
@@ -391,6 +399,8 @@ namespace HistoricWeatherData.Core.ViewModels
         private async Task NavigateToSettings()
         {
             // Navigation will be handled by the UI layer
+            // For WinForms, this would show the settings form
+            // For Maui, this would navigate to the settings page
             await Task.CompletedTask;
         }
 

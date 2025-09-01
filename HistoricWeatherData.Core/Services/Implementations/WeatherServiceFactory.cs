@@ -1,8 +1,7 @@
-using HistoricWeatherData.Core.Services.Implementations;
 using HistoricWeatherData.Core.Services.Interfaces;
 using System;
 
-namespace HistoricWeatherData.Core.Services
+namespace HistoricWeatherData.Core.Services.Implementations
 {
     public class WeatherServiceFactory : IWeatherServiceFactory
     {

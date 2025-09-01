@@ -1,6 +1,4 @@
-using HistoricWeatherData.Core.Services.Interfaces;
-
-namespace HistoricWeatherData.Core.Services
+namespace HistoricWeatherData.Core.Services.Interfaces
 {
     public interface IWeatherServiceFactory
     {

@@ -1,0 +1,41 @@
+=== Historic Weather Data Log Started: 2025/09/01 21:49:08 ===
+[2025-09-01 21:50:24] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-09-01 21:50:24] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40.7128&lon=-74.006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-09-01 21:50:26] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 200 (OK) | Duration: 2120ms | Content Length: 648 chars
+[2025-09-01 21:50:26] [INFO] ReverseGeocodingService.GetLocationData: SUCCESS (2,17s) - 1 requests, 0 errors - Resolved to: City of New York, United States
+[2025-09-01 21:50:26] [INFO] Fetching weather data for years 2024-2025, date range 2025-09-14 to 2025-09-15
+[2025-09-01 21:50:26] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-09-14&end_date=2024-09-15&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-09-14, end_date=2024-09-15, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/09/01 21:52:01 ===
+[2025-09-01 21:53:00] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-09-01 21:53:00] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40.7128&lon=-74.006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-09-01 21:53:00] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 200 (OK) | Duration: 552ms | Content Length: 648 chars
+[2025-09-01 21:53:00] [INFO] ReverseGeocodingService.GetLocationData: SUCCESS (0,57s) - 1 requests, 0 errors - Resolved to: City of New York, United States
+[2025-09-01 21:53:00] [INFO] Fetching weather data for years 2024-2025, date range 2024-06-02 to 2024-06-03
+[2025-09-01 21:53:00] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-06-02&end_date=2024-06-03&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-06-02, end_date=2024-06-03, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/09/01 22:03:37 ===
+=== Historic Weather Data Log Started: 2025/09/01 22:08:59 ===
+[2025-09-01 22:09:25] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-09-01 22:09:25] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40.7128&lon=-74.006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-09-01 22:09:26] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 200 (OK) | Duration: 713ms | Content Length: 648 chars
+[2025-09-01 22:09:26] [INFO] ReverseGeocodingService.GetLocationData: SUCCESS (0,73s) - 1 requests, 0 errors - Resolved to: City of New York, United States
+[2025-09-01 22:09:26] [INFO] Fetching weather data for years 2024-2025, date range 2025-08-18 to 2025-09-01
+[2025-09-01 22:09:26] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-08-18&end_date=2024-09-01&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-08-18, end_date=2024-09-01, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/09/01 22:12:40 ===
+[2025-09-01 22:13:50] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-09-01 22:13:50] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40.7128&lon=-74.006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-09-01 22:13:51] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 200 (OK) | Duration: 702ms | Content Length: 648 chars
+[2025-09-01 22:13:51] [INFO] ReverseGeocodingService.GetLocationData: SUCCESS (0,72s) - 1 requests, 0 errors - Resolved to: City of New York, United States
+[2025-09-01 22:13:51] [INFO] Fetching weather data for years 2024-2025, date range 2025-08-25 to 2025-09-01
+[2025-09-01 22:13:51] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-08-25&end_date=2024-09-01&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-08-25, end_date=2024-09-01, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+[2025-09-01 22:18:51] [WARNING] Year 2024: No data returned
+[2025-09-01 22:18:51] [DEBUG] [API REQUEST] OpenMeteo-Year2025 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2025-08-25&end_date=2025-09-01&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2025-08-25, end_date=2025-09-01, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/09/01 22:21:30 ===
+[2025-09-01 22:21:49] [INFO] Starting weather data request for location (40,7128, -74,0060) - 1 years back
+[2025-09-01 22:21:49] [DEBUG] [API REQUEST] NominatimReverseGeocoding - https://nominatim.openstreetmap.org/reverse?format=json&lat=40.7128&lon=-74.006&zoom=10&addressdetails=1 | Params: lat=40,7128, lon=-74,006, zoom=10, format=json, addressdetails=1
+[2025-09-01 22:21:50] [DEBUG] [API RESPONSE] NominatimReverseGeocoding - Status: 200 (OK) | Duration: 538ms | Content Length: 648 chars
+[2025-09-01 22:21:50] [INFO] ReverseGeocodingService.GetLocationData: SUCCESS (0,55s) - 1 requests, 0 errors - Resolved to: City of New York, United States
+[2025-09-01 22:21:50] [INFO] Fetching weather data for years 2024-2025, date range 2025-09-01 to 2025-09-02
+[2025-09-01 22:21:50] [DEBUG] [API REQUEST] OpenMeteo-Year2024 - https://archive-api.open-meteo.com/v1/archive?latitude=40.712800&longitude=-74.006000&start_date=2024-09-01&end_date=2024-09-02&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto | Params: latitude=40.712800, longitude=-74.006000, start_date=2024-09-01, end_date=2024-09-02, daily=temperature_2m_max,temperature_2m_min,precipitation_sum, timezone=auto
+=== Historic Weather Data Log Started: 2025/09/01 22:26:39 ===
+=== Historic Weather Data Log Started: 2025/09/01 22:29:37 ===
+=== Historic Weather Data Log Started: 2025/09/01 22:41:23 ===

@@ -126,6 +126,24 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Syncfusion.Chart.Windows": {
+              "target": "Package",
+              "version": "[26.1.35, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[26.1.35, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

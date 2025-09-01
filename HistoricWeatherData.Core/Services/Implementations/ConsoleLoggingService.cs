@@ -156,3 +156,5 @@ namespace HistoricWeatherData.Core.Services.Implementations
         public string GetLogFilePath() => string.Empty;
 
         public string GetErrorLogFilePath() => string.Empty;
+    }
+}

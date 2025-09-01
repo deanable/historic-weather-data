@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HistoricWeatherData.WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0d0dbe9c0c18b5f29c518dcf21f6428d7b1bd6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a39596a86ec73168d715bee1953938069cb6fa21")]
 [assembly: System.Reflection.AssemblyProductAttribute("HistoricWeatherData.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HistoricWeatherData.WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

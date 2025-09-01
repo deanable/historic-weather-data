@@ -26,14 +26,15 @@ namespace HistoricWeatherData.Core.Services.Implementations
 
         protected override async Task<WeatherData?> FetchDayDataAsync(WeatherQueryParameters parameters, DateTime date, string? apiKey, ApiDiagnostics diagnostics)
         {
+            if (string.IsNullOrEmpty(apiKey))
+            {
+                LoggingService.LogError($"WeatherAPI requires an API key but none was provided for date {date:yyyy-MM-dd}");
+                return null;
+            }
+
             var url = $"https://api.weatherapi.com/v1/history.json?key={apiKey}&q={parameters.Location.Latitude},{parameters.Location.Longitude}&dt={date:yyyy-MM-dd}";
 
-            LoggingService.LogApiRequest($"{ProviderName}-{date:yyyy-MM-dd}", url, new Dictionary<string, string>
-            {
-                ["latitude"] = parameters.Location.Latitude.ToString(),
-                ["longitude"] = parameters.Location.Longitude.ToString(),
-                ["date"] = date.ToString("yyyy-MM-dd")
-            });
+            LoggingService.LogInformation($"[{ProviderName}] Starting API request for {date:yyyy-MM-dd} - Lat: {parameters.Location.Latitude:F4}, Lon: {parameters.Location.Longitude:F4}");
 
             var requestStartTime = DateTime.Now;
             var response = await HttpClient.GetAsync(url);
@@ -41,12 +42,14 @@ namespace HistoricWeatherData.Core.Services.Implementations
 
             diagnostics.SetStatusCode((int)response.StatusCode);
 
+            LoggingService.LogInformation($"[{ProviderName}] API Response Status: {(int)response.StatusCode} ({GetHttpStatusText((int)response.StatusCode)}) - Duration: {requestDuration.TotalMilliseconds:F0}ms");
+
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
+                LoggingService.LogError($"[{ProviderName}] API Error Response - Status: {(int)response.StatusCode}, Content: {errorContent}");
                 diagnostics.AddError($"HTTP {(int)response.StatusCode}: {errorContent}");
-                LoggingService.LogApiResponse($"{ProviderName}-{date:yyyy-MM-dd}", (int)response.StatusCode, errorContent, requestDuration);
-                LoggingService.LogError($"{ProviderName} API returned {(int)response.StatusCode} for date {date:yyyy-MM-dd}: {errorContent}");
+                LoggingService.LogApiError($"{ProviderName}-{date:yyyy-MM-dd}", url, new Exception(errorContent), requestDuration);
                 diagnostics.Complete(false, (int)response.StatusCode);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized || response.StatusCode == System.Net.HttpStatusCode.Forbidden)
@@ -58,18 +61,43 @@ namespace HistoricWeatherData.Core.Services.Implementations
             }
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            LoggingService.LogApiResponse($"{ProviderName}-{date:yyyy-MM-dd}", (int)response.StatusCode, responseContent, requestDuration);
+            LoggingService.LogInformation($"[{ProviderName}] Raw API Response Length: {responseContent.Length} characters");
 
-            var result = await response.Content.ReadFromJsonAsync<WeatherAPIResponse>();
+            WeatherAPIResponse? result;
+            try
+            {
+                result = await response.Content.ReadFromJsonAsync<WeatherAPIResponse>();
+                LoggingService.LogInformation($"[{ProviderName}] JSON deserialization successful for {date:yyyy-MM-dd}");
+            }
+            catch (Exception ex)
+            {
+                LoggingService.LogError($"[{ProviderName}] JSON deserialization failed for {date:yyyy-MM-dd}: {ex.Message}\nRaw response: {responseContent.Substring(0, Math.Min(500, responseContent.Length))}...");
+                throw;
+            }
 
             if (result?.forecast?.forecastday == null || !result.forecast.forecastday.Any())
             {
+                LoggingService.LogWarning($"[{ProviderName}] No forecast data available in API response for {date:yyyy-MM-dd}. Response contains: forecast={result?.forecast != null}, forecastday={(result?.forecast?.forecastday?.Length ?? 0)} items");
                 return null;
             }
 
-            var day = result.forecast.forecastday[0].day;
+            var forecastDays = result.forecast.forecastday;
+            if (forecastDays.Length == 0)
+            {
+                LoggingService.LogWarning($"[{ProviderName}] Empty forecastday array in response for {date:yyyy-MM-dd}");
+                return null;
+            }
 
-            return new WeatherData
+            var forecastDay = forecastDays[0];
+            var day = forecastDay.day;
+
+            if (day == null)
+            {
+                LoggingService.LogWarning($"[{ProviderName}] Day object is null in forecastday[0] for {date:yyyy-MM-dd}. Available properties: {string.Join(", ", typeof(ForecastDay).GetProperties().Select(p => p.Name))}");
+                return null;
+            }
+
+            var weatherData = new WeatherData
             {
                 Date = date,
                 TemperatureMin = day.mintemp_c,
@@ -77,6 +105,25 @@ namespace HistoricWeatherData.Core.Services.Implementations
                 Precipitation = day.totalprecip_mm,
                 WeatherProvider = ProviderName,
                 Location = parameters.Location
+            };
+
+            LoggingService.LogInformation($"[{ProviderName}] Successfully parsed weather data for {date:yyyy-MM-dd}: Min={weatherData.TemperatureMin:F1}°C, Max={weatherData.TemperatureMax:F1}°C, Precipitation={weatherData.Precipitation:F2}mm");
+
+            diagnostics.Complete(true);
+            return weatherData;
+        }
+
+        private string GetHttpStatusText(int statusCode)
+        {
+            return statusCode switch
+            {
+                200 => "OK",
+                401 => "Unauthorized",
+                403 => "Forbidden",
+                404 => "Not Found",
+                429 => "Too Many Requests",
+                500 => "Internal Server Error",
+                _ => $"Status {statusCode}"
             };
         }
 
